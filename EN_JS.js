@@ -1,12 +1,30 @@
 /* Toggle Icon Navbar */
 
+document.addEventListener('DOMContentLoaded', () => {
     let menuIcon = document.querySelector('#menu-icon');
     let navbar = document.querySelector('nav');
+    let menuLinks = navbar.querySelectorAll('a');
 
+/* Toggle Icon Navbar */
     menuIcon.onclick = () => {
         menuIcon.classList.toggle('fa-xmark');
         navbar.classList.toggle('active');
     }
+
+/* Hide the navigation menu and remove toggle icon when a menu item is clicked */
+    menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuIcon.classList.remove('fa-xmark');
+            navbar.classList.remove('active');
+        });
+    });
+
+/* Sticky Navbar */
+    let header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+        header.classList.toggle('sticky', window.scrollY > 100);
+    });
+});
 
 /* Scroll Section Active Link */
 
@@ -28,16 +46,6 @@
             };
         });
     };
-
-/* Sticky Navbar */
-
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky' , window.screenY > 100);
-
-/* Remove Toggle Icon And Navbar */
-
-    menuIcon.classList.remove('fa-xmark');
-    navbar.classList.remove('active');
 
 /* Disable Form Submit Button Untill All Filled , Form Buttons Style When Full With Text And Redirect To Thank You Page*/
 

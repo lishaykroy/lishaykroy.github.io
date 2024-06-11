@@ -1232,6 +1232,19 @@ display:block;
     html{
         font-size: 55%;
     }
+
+    .language-switcher {
+        display: none;
+    }
+
+    .mode-switcher {
+        display: none;
+    }
+
+    #infoContainer {
+        display: none;
+    }
+
 }
 
 @media (max-width: 991px) {
@@ -1257,14 +1270,6 @@ display:block;
 
     .footer {
         padding: 2rem 3%;        
-    }
-
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
     }
     
     .language-switcher {
@@ -1307,10 +1312,6 @@ display:block;
 
     .fields-buttons {
         display: none;
-    }
-
-    .end-icon {
-        display: none !important;
     }
 
     #searchBox {
@@ -1433,8 +1434,8 @@ display:block;
     }
 
     .card-content button {
-        font-size: 12px;
-        padding: 3px;
+        font-size: 6px;
+        padding: 2px;
     }
 
     .filter-buttons {
@@ -1462,6 +1463,17 @@ display:block;
         height: 30px;
         border: 1px solid var(--main-color);
     }
+
+    .cursor {
+        display: none;
+    }
+
+    .card {
+        width: 350px;
+        height: 140px;
+        border-radius: 50%;
+    }
+
 }
 
 @media (max-width: 617px) {
@@ -1513,8 +1525,8 @@ display:block;
     }
 
     .card-content button {
-        font-size: 12px;
-        padding: 3px;
+        font-size: 6px;
+        padding: 2px;
     }
 
     .filter-buttons {
@@ -1541,6 +1553,10 @@ display:block;
         width: 30px;
         height: 30px;
         border: 1px solid var(--main-color);
+    }
+
+    .cursor {
+        display: none;
     }
 }
 
@@ -1591,8 +1607,8 @@ display:block;
     }
 
     .card-content button {
-        font-size: 12px;
-        padding: 3px;
+        font-size: 6px;
+        padding: 2px;
     }
 
     .filter-buttons {
@@ -1619,6 +1635,10 @@ display:block;
         width: 30px;
         height: 30px;
         border: 1px solid var(--main-color);
+    }
+
+    .cursor {
+        display: none;
     }
 }
 
