@@ -1475,8 +1475,13 @@ display:block;
         border-radius: 50%;
     }
 
+    .contact form .input-box {
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .contact form .input-box input {
-        width: 20%;
+        width: calc(50% - 0.5rem); 
     }
 
 }
