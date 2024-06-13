@@ -1029,7 +1029,7 @@ display:block;
     pointer-events: none;
 }
 
-.contact form .input-box input , .contact form textarea {
+.contact form textarea {
     width: 100%;
     color: var(--text-color);
     background: var(--snd-bf-color);
@@ -1061,6 +1061,14 @@ display:block;
 
 .contact form .input-box input {
     width: 49%;
+    color: var(--text-color);
+    background: var(--snd-bf-color);
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    position: relative; 
 }
 
 .contact .input-box textarea {
