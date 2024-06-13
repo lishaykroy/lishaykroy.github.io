@@ -1243,6 +1243,7 @@ display:block;
         left: 50%;
         transform: translate(-50%, -50%);
         font-size: 1.5rem;
+        font-weight: 500;
         color: var(--snd-bf-color);
         display: none;
     }
