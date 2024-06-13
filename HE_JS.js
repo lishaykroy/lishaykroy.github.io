@@ -220,37 +220,79 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* Cursor Changes */
 
-const cursor = document.querySelector('.cursor');
+    const cursor = document.querySelector('.cursor');
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.top = e.clientY + "px";
-    cursor.style.left = e.clientX + "px";
-});
+    function handleMouseMove(e) {
+        cursor.style.top = e.clientY + "px";
+        cursor.style.left = e.clientX + "px";
+    }
 
-function isLinkOrIconOrInputElement(element) {
-    return element.tagName === 'A' || element.tagName === 'I' || element.tagName === 'LI' || element.tagName === 'BUTTON';
-}
+    function isLinkOrIconOrInputElement(element) {
+        return element.tagName === 'A' || element.tagName === 'I' || element.tagName === 'LI' || element.tagName === 'BUTTON';
+    }
 
-document.addEventListener("mouseover", (e) => {
-    if (isLinkOrIconOrInputElement(e.target)) {
-        cursor.style.display = "none";
-    } else {
+    function handleMouseOver(e) {
+        if (isLinkOrIconOrInputElement(e.target)) {
+            cursor.style.display = "none";
+        } else {
+            cursor.style.display = "block";
+        }
+    }
+
+    function handleMouseLeave() {
         cursor.style.display = "block";
     }
-});
 
-document.addEventListener("mouseleave", () => {
-    cursor.style.display = "block";
-});
+    // Add event listeners if screen width is greater than 768px
+    if (window.innerWidth > 768) {
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseover", handleMouseOver);
+        document.addEventListener("mouseleave", handleMouseLeave);
+        
+        document.querySelectorAll('a, i, li, button').forEach(element => {
+            element.addEventListener("mouseover", () => {
+                cursor.style.display = "none";
+            });
+            element.addEventListener("mouseleave", () => {
+                cursor.style.display = "block";
+            });
+        });
+    } else {
+        cursor.style.display = "none"; // Ensure cursor is hidden on initial load
+    }
 
-document.querySelectorAll('a, i, li, button').forEach(element => {
-    element.addEventListener("mouseover", () => {
-        cursor.style.display = "none";
+    // Recheck on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            cursor.style.display = "block";
+            document.addEventListener("mousemove", handleMouseMove);
+            document.addEventListener("mouseover", handleMouseOver);
+            document.addEventListener("mouseleave", handleMouseLeave);
+
+            document.querySelectorAll('a, i, li, button').forEach(element => {
+                element.addEventListener("mouseover", () => {
+                    cursor.style.display = "none";
+                });
+                element.addEventListener("mouseleave", () => {
+                    cursor.style.display = "block";
+                });
+            });
+        } else {
+            cursor.style.display = "none";
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseover", handleMouseOver);
+            document.removeEventListener("mouseleave", handleMouseLeave);
+            
+            document.querySelectorAll('a, i, li, button').forEach(element => {
+                element.removeEventListener("mouseover", () => {
+                    cursor.style.display = "none";
+                });
+                element.removeEventListener("mouseleave", () => {
+                    cursor.style.display = "block";
+                });
+            });
+        }
     });
-    element.addEventListener("mouseleave", () => {
-        cursor.style.display = "block";
-    });
-});
 
 /* Show And Hide End Icon On Header Based On Active Section */
 

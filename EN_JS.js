@@ -222,34 +222,76 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const cursor = document.querySelector('.cursor');
 
-    document.addEventListener("mousemove", (e) => {
+    function handleMouseMove(e) {
         cursor.style.top = e.clientY + "px";
         cursor.style.left = e.clientX + "px";
-    });
+    }
 
     function isLinkOrIconOrInputElement(element) {
         return element.tagName === 'A' || element.tagName === 'I' || element.tagName === 'LI' || element.tagName === 'BUTTON';
     }
 
-    document.addEventListener("mouseover", (e) => {
+    function handleMouseOver(e) {
         if (isLinkOrIconOrInputElement(e.target)) {
             cursor.style.display = "none";
         } else {
             cursor.style.display = "block";
         }
-    });
+    }
 
-    document.addEventListener("mouseleave", () => {
+    function handleMouseLeave() {
         cursor.style.display = "block";
-    });
+    }
 
-    document.querySelectorAll('a, i, li, button').forEach(element => {
-        element.addEventListener("mouseover", () => {
-            cursor.style.display = "none";
+    // Add event listeners if screen width is greater than 768px
+    if (window.innerWidth > 768) {
+        document.addEventListener("mousemove", handleMouseMove);
+        document.addEventListener("mouseover", handleMouseOver);
+        document.addEventListener("mouseleave", handleMouseLeave);
+        
+        document.querySelectorAll('a, i, li, button').forEach(element => {
+            element.addEventListener("mouseover", () => {
+                cursor.style.display = "none";
+            });
+            element.addEventListener("mouseleave", () => {
+                cursor.style.display = "block";
+            });
         });
-        element.addEventListener("mouseleave", () => {
+    } else {
+        cursor.style.display = "none"; // Ensure cursor is hidden on initial load
+    }
+
+    // Recheck on window resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
             cursor.style.display = "block";
-        });
+            document.addEventListener("mousemove", handleMouseMove);
+            document.addEventListener("mouseover", handleMouseOver);
+            document.addEventListener("mouseleave", handleMouseLeave);
+
+            document.querySelectorAll('a, i, li, button').forEach(element => {
+                element.addEventListener("mouseover", () => {
+                    cursor.style.display = "none";
+                });
+                element.addEventListener("mouseleave", () => {
+                    cursor.style.display = "block";
+                });
+            });
+        } else {
+            cursor.style.display = "none";
+            document.removeEventListener("mousemove", handleMouseMove);
+            document.removeEventListener("mouseover", handleMouseOver);
+            document.removeEventListener("mouseleave", handleMouseLeave);
+            
+            document.querySelectorAll('a, i, li, button').forEach(element => {
+                element.removeEventListener("mouseover", () => {
+                    cursor.style.display = "none";
+                });
+                element.removeEventListener("mouseleave", () => {
+                    cursor.style.display = "block";
+                });
+            });
+        }
     });
     
 /* Show And Hide End Icon On Header Based On Active Section */
