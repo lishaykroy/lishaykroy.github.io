@@ -1639,7 +1639,7 @@ display:block;
         border: 1px solid var(--main-color);
     }
 
-    .contact form .down-icon {
+    .contact form .down-icon a {
         display: none;
     }
 
