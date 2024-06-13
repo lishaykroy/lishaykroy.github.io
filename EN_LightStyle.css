@@ -1404,14 +1404,6 @@ span {
         margin-bottom: 3rem;       
     }
 
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
-    }
-    
     .language-switcher {
         display: none;
     }
@@ -1495,14 +1487,6 @@ span {
         margin-top: 4rem;
     }    
 
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
-    }
-
     .language-switcher {
         display: none;
     }
@@ -1568,14 +1552,6 @@ span {
 @media (max-width: 450px) {
     html{
         font-size: 50%;
-    }
-    
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
     }
 
     .language-switcher {

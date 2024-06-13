@@ -1403,14 +1403,6 @@ display:block;
     .skills h2 {
         margin-bottom: 3rem;       
     }
-
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
-    }
     
     .language-switcher {
         display: none;
@@ -1495,14 +1487,6 @@ display:block;
         margin-top: 4rem;
     }    
 
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
-    }
-
     .language-switcher {
         display: none;
     }
@@ -1568,14 +1552,6 @@ display:block;
 @media (max-width: 450px) {
     html{
         font-size: 50%;
-    }
-    
-    .down-icon {
-        display: none;
-    }
-
-    .up-icon {
-        display: none;
     }
 
     .language-switcher {
