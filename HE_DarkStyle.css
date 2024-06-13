@@ -1236,10 +1236,9 @@ display:block;
 /* Phone Only */
 
 .phone-only {
-    margin-top: 10px;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     font-size: 1.5rem;
     font-weight: 500;
