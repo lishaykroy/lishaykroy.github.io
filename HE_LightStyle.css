@@ -1497,6 +1497,10 @@ span {
         border-radius: 50%;
     }
 
+    .contact form .down-icon{
+        display: none;
+    }
+    
 }
 
 @media (max-width: 617px) {
@@ -1635,10 +1639,6 @@ span {
         width: 30px;
         height: 30px;
         border: 1px solid var(--main-color);
-    }
-
-    .contact form .down-icon a {
-        display: none;
     }
 
 }

@@ -1498,6 +1498,10 @@ display:block;
         height: 140px;
         border-radius: 50%;
     }
+    
+    .contact form .down-icon{
+        display: none;
+    }
 
 }
 
@@ -1637,10 +1641,6 @@ display:block;
         width: 30px;
         height: 30px;
         border: 1px solid var(--main-color);
-    }
-
-    .contact form .down-icon a {
-        display: none;
     }
 
 }

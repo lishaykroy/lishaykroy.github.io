@@ -1498,6 +1498,10 @@ span {
         height: 140px;
         border-radius: 50%;
     }
+    
+    .contact form .down-icon{
+        display: none;
+    }
 
 }
 
@@ -1639,10 +1643,6 @@ span {
         border: 1px solid var(--main-color);
     }
 
-    .contact form .down-icon a {
-        display: none;
-    }
-    
 }
 
 /* Cursor */

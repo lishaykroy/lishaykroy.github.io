@@ -1498,6 +1498,10 @@ display:block;
         border-radius: 50%;
     }
 
+    .contact form .down-icon{
+        display: none;
+    }
+    
 }
 
 @media (max-width: 617px) {
@@ -1638,10 +1642,6 @@ display:block;
         border: 1px solid var(--main-color);
     }
 
-    .contact form .down-icon a {
-        display: none;
-    }
-    
 }
 
 /* Cursor */
