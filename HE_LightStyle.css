@@ -1637,7 +1637,7 @@ span {
         border: 1px solid var(--main-color);
     }
 
-    .contact .down-icon {
+    .contact form .down-icon {
         display: none;
     }
 
