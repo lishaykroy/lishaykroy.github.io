@@ -1029,9 +1029,9 @@ span {
     pointer-events: none;
 }
 
-.contact form .input-box input , .contact form textarea {
+.contact form textarea {
     width: 100%;
-    color: var(--main-color);
+    color: var(--text-color);
     background: var(--snd-bf-color);
     border-top-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
@@ -1061,11 +1061,18 @@ span {
 
 .contact form .input-box input {
     width: 49%;
+    color: var(--text-color);
+    background: var(--snd-bf-color);
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin: .7rem 0;
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    position: relative; 
 }
 
 .contact .input-box textarea {
     resize: none;
-
 }
 
 .contact .input-box textarea:hover,  .contact .input-box textarea:focus ,  .contact .input-box textarea.not-empty {
@@ -1473,10 +1480,6 @@ span {
         width: 350px;
         height: 140px;
         border-radius: 50%;
-    }
-
-    .contact form .input-box input {
-        width: 40%;
     }
 
 }

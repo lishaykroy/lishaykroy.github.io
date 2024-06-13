@@ -1073,7 +1073,6 @@ display:block;
 
 .contact .input-box textarea {
     resize: none;
-
 }
 
 .contact .input-box textarea:hover,  .contact .input-box textarea:focus ,  .contact .input-box textarea.not-empty {
@@ -1481,15 +1480,6 @@ display:block;
         width: 350px;
         height: 140px;
         border-radius: 50%;
-    }
-
-    .contact form .input-box {
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .contact form .input-box input {
-        width: calc(50% - 0.5rem); 
     }
 
 }
