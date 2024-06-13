@@ -1238,6 +1238,7 @@ display:block;
 
 .phone-only {
     align-items: center;
+    margin-top: 10px;
     position: absolute;
     top: 25%;
     left: 50%;
