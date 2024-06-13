@@ -1244,6 +1244,7 @@ span {
     transform: translateX(-40%);
     font-size: 1.5rem;
     font-weight: 500;
+    font-style: bold;
     color: var(--main-color);
     display: none;
 }

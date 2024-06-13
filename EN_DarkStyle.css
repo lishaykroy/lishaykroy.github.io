@@ -1244,8 +1244,9 @@ display:block;
     left: 50%;
     transform: translateX(-40%);
     font-size: 1.5rem;
-    font-weight: 500;
-    color: var(--snd-bf-color);
+    font-weight: 700;
+    font-style: bold;
+    color: var(--text-color);
     display: none;
 }
 
