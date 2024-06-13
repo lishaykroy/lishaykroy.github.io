@@ -1236,16 +1236,17 @@ display:block;
 
 /* Phone Only */
 
-    .phone-only {
-        align-items: center;
-        position: absolute;
-        top: 35%;
-        left: 50%;
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: var(--text-color);
-        display: none;
-    }
+.phone-only {
+    align-items: center;
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    display: none;
+}
 
 /* Responsivness */
 

@@ -1238,13 +1238,15 @@ display:block;
 .phone-only {
     align-items: center;
     position: absolute;
-    top: 35%;
+    top: 15%;
     left: 50%;
+    transform: translateX(-50%);
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-color);
     display: none;
 }
+
 
 /* Responsivness */
 
