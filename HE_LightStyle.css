@@ -1562,9 +1562,6 @@ span {
         border: 1px solid var(--main-color);
     }
 
-    .cursor {
-        display: none;
-    }
 }
 
 @media (max-width: 450px) {
@@ -1572,10 +1569,6 @@ span {
         font-size: 50%;
     }
 
-    .contact form .input-box input {
-        width: 100%;
-    }
-    
     .down-icon {
         display: none;
     }
@@ -1644,9 +1637,6 @@ span {
         border: 1px solid var(--main-color);
     }
 
-    .cursor {
-        display: none;
-    }
 }
 
 /* Cursor */
