@@ -1237,6 +1237,13 @@ display:block;
 /* Phone Only */
 
     .phone-only {
+        text-align: center;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+        color: var(--main-color);
         display: none;
     }
 
