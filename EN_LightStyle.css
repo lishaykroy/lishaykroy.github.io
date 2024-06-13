@@ -1351,12 +1351,21 @@ span {
         height: 30px;
         border: 1px solid var(--main-color);
     }
+        
+    .phone-only {
+        display: block;
+    }
+
 }
 
 
 @media (max-width: 768px) {
     #menu-icon {
         display: block;
+    }
+
+    .home .down-icon {
+        display: none;
     }
 
     nav {
@@ -1488,10 +1497,6 @@ span {
         width: 350px;
         height: 140px;
         border-radius: 50%;
-    }
-    
-    .phone-only {
-        display: block;
     }
 
 }
@@ -1634,6 +1639,10 @@ span {
         border: 1px solid var(--main-color);
     }
 
+    .contact .down-icon {
+        display: none;
+    }
+    
 }
 
 /* Cursor */

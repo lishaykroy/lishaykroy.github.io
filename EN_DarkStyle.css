@@ -1351,6 +1351,11 @@ display:block;
         height: 30px;
         border: 1px solid var(--main-color);
     }
+    
+    .phone-only {
+        display: block;
+    }
+
 }
 
 
@@ -1359,6 +1364,10 @@ display:block;
         display: block;
     }
 
+    .home .down-icon {
+        display: none;
+    }
+    
     nav {
         position: absolute;
         top: 100%;
@@ -1488,10 +1497,6 @@ display:block;
         width: 350px;
         height: 140px;
         border-radius: 50%;
-    }
-
-    .phone-only {
-        display: block;
     }
 
 }
@@ -1632,6 +1637,10 @@ display:block;
         width: 30px;
         height: 30px;
         border: 1px solid var(--main-color);
+    }
+
+    .contact .down-icon {
+        display: none;
     }
 
 }
