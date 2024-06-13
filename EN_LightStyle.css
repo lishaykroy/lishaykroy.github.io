@@ -1238,8 +1238,8 @@ span {
 
 .phone-only {
     align-items: center;
-    position: absolute;
     margin-top: 30px;
+    position: absolute;
     top: 25%;
     left: 50%;
     transform: translateX(-40%);
