@@ -1237,6 +1237,9 @@ display:block;
 /* Phone Only */
 
     .phone-only {
+        justify-content: center;
+        margin-top: 10px;
+        align-items: center;
         text-align: center;
         position: absolute;
         top: 50%;
