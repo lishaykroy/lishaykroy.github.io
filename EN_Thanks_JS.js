@@ -47,6 +47,7 @@
         }
     });
 
+
 /* Context Menu */
 
 window.addEventListener("contextmenu", function(event){
@@ -60,4 +61,22 @@ window.addEventListener("contextmenu", function(event){
 window.addEventListener("click", function(){
     var contextElement = document.getElementById("context-menu");
     contextElement.classList.remove("active");
+});
+
+document.getElementById("reload").addEventListener("click", function() {
+    location.reload();
+});
+
+document.getElementById("back").addEventListener("click", function() {
+    window.history.back();
+});
+
+document.getElementById("forward").addEventListener("click", function() {
+    window.history.forward();
+});
+
+document.getElementById("exit").addEventListener("click", function() {
+    if (confirm("Are you sure you want to exit ?")) {
+        alert("I'm not gonna help you with this action , I want you to stay here .");
+    }
 });
