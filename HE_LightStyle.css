@@ -1709,6 +1709,7 @@ span {
     transform: scale(0);
     transform-origin: top left;
     display: none;
+    border-radius: 2rem;
 }
 
 #context-menu .item {
