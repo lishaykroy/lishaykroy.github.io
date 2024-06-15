@@ -46,3 +46,18 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('fullNameSpan').innerText = fullName;
     }
 });
+
+/* Context Menu */
+
+window.addEventListener("contextmenu", function(event){
+    event.preventDefault();
+    var contextElement = document.getElementById("context-menu");
+    contextElement.style.top = event.offsetY + "px";
+    contextElement.style.left = event.offsetX + "px";
+    contextElement.classList.add("active");
+});
+
+window.addEventListener("click", function(){
+    var contextElement = document.getElementById("context-menu");
+    contextElement.classList.remove("active");
+});

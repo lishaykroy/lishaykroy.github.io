@@ -70,10 +70,25 @@ section {
     color: var(--main-color);
     font-weight: 700;
     cursor: default;
+    animation: animate 5s linear infinite;
 }
 
 .logo:hover {
     cursor: none;
+}
+
+@keyframes animate {
+
+    0% , 18% , 20% , 50.1% , 60% , 65.1% , 80% , 90.1% , 92% {
+        color: #929090;
+        text-shadow: none;
+    }
+
+    18.1% , 20.1% , 30% , 50% , 60.1% , 65% , 80.1% , 90% , 92.1% , 100% {
+        color: var(--main-color);
+        text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color), 0 0 40px var(--main-color), 0 0 80px var(--main-color), 0 0 100px var(--main-color);
+    }
+
 }
 
 /* Navbar */
@@ -1685,3 +1700,40 @@ span {
     background: linear-gradient(to bottom , #fff, #d9a9e9 , #C243EE);
 }
 
+/* Context Menu */
+
+#context-menu {
+    position: fixed;
+    z-index: 1000;
+    width: 100px;
+    background: #1b1a1a;
+    transform: scale(0);
+    transform-origin: top left;
+    display: none;
+}
+
+#context-menu .item {
+    padding: 8px 10px;
+    font-size: 15px;
+    color: var(--bg-color);
+}
+
+#context-menu.active {
+    display: block;
+    transform: scale(1);
+    transition: transform 200ms ease-in-out;
+}
+
+#context-menu .item:hover {
+    background: var(--main-color)
+}
+
+#context-menu .item i {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#context-menu hr {
+    margin: 2px 0px;
+    border-color: var(--main-color)
+}

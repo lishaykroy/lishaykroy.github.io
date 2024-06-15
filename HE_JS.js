@@ -752,3 +752,18 @@ cssToggle.addEventListener('click', () => {
         cssToggle.classList.add('fa-sun');
     }
 });
+
+/* Context Menu */
+
+window.addEventListener("contextmenu", function(event){
+    event.preventDefault();
+    var contextElement = document.getElementById("context-menu");
+    contextElement.style.top = event.offsetY + "px";
+    contextElement.style.left = event.offsetX + "px";
+    contextElement.classList.add("active");
+});
+
+window.addEventListener("click", function(){
+    var contextElement = document.getElementById("context-menu");
+    contextElement.classList.remove("active");
+});
