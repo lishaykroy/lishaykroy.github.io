@@ -212,7 +212,7 @@ section {
 #context-menu {
     position: fixed;
     text-align: right;
-    z-index: 1000;
+    z-index: 998;
     width: 100px;
     background: #1b1a1a;
     transform: scale(0);
