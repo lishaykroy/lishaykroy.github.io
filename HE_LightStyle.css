@@ -1701,9 +1701,8 @@ span {
 
 #context-menu {
     position: fixed;
-    text-align: right;
     z-index: 998;
-    width: 120px;
+    width: 200px;
     background: #1b1a1a;
     transform: scale(0);
     transform-origin: top left;
@@ -1712,6 +1711,9 @@ span {
 }
 
 #context-menu .item {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
     padding: 8px 10px;
     font-size: 15px;
     color: var(--bg-color);
@@ -1724,15 +1726,30 @@ span {
 }
 
 #context-menu .item:hover {
-    background: var(--main-color)
-}
-
-#context-menu .item i {
-    display: inline-block;
-    margin-right: 5px;
+    background: #262B40;
+    border-radius: 2rem;
 }
 
 #context-menu hr {
-    margin: 2px 0px;
-    border-color: var(--main-color)
+    margin: 5px 0;  
+    border: none;
+    border-top: 1px solid #444; 
+}
+
+#context-menu .item span {
+    color: var(--bg-color);
+}
+
+#context-menu .item i {
+    margin-left: 10px;
+}
+
+#context-menu .shortcut {
+    font-size: 11px;  
+    margin-right: auto; 
+}
+
+#context-menu .item span.name {
+    margin-right: 10px;
+    color: var(--bg-color);
 }

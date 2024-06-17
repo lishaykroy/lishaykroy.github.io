@@ -1704,7 +1704,7 @@ display:block;
 #context-menu {
     position: fixed;
     z-index: 998;
-    width: 100px;
+    width: 200px;
     background: #1b1a1a;
     transform: scale(0);
     transform-origin: top left;
@@ -1713,9 +1713,11 @@ display:block;
 }
 
 #context-menu .item {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
     padding: 8px 10px;
     font-size: 15px;
-    color: var(--text-color);
 }
 
 #context-menu.active {
@@ -1726,14 +1728,24 @@ display:block;
 
 #context-menu .item:hover {
     background: var(--snd-bf-color);
+    border-radius: 2rem;
 }
 
 #context-menu .item i {
-    display: inline-block;
-    margin-right: 5px;
+    margin-right: 10px;  
 }
 
 #context-menu hr {
-    margin: 2px 0px;
-    border-color: var(--snd-bf-color);
+    margin: 5px 0;  
+    border: none;
+    border-top: 1px solid #444; 
+}
+
+#context-menu .item span {
+    color: var(--text-color);
+}
+
+#context-menu .shortcut {
+    margin-left: auto;
+    font-size: 11px;  
 }

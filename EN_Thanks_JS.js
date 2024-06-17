@@ -80,3 +80,14 @@ document.getElementById("exit").addEventListener("click", function() {
         alert("I'm not gonna help you with this action , I want you to stay here .");
     }
 });
+
+document.getElementById("print").addEventListener("click", function() {
+    window.print();
+});
+
+document.getElementById("save").addEventListener("click", function() {
+    var link = document.createElement('a');
+    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
+    link.download = 'Lishay Kroytoro Protfolio.html';
+    link.click();
+});

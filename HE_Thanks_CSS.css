@@ -210,9 +210,8 @@ section {
 
 #context-menu {
     position: fixed;
-    text-align: right;
     z-index: 998;
-    width: 120px;
+    width: 200px;
     background: #1b1a1a;
     transform: scale(0);
     transform-origin: top left;
@@ -221,9 +220,11 @@ section {
 }
 
 #context-menu .item {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start;
     padding: 8px 10px;
     font-size: 15px;
-    color: var(--text-color);
 }
 
 #context-menu.active {
@@ -234,14 +235,29 @@ section {
 
 #context-menu .item:hover {
     background: var(--snd-bf-color);
-}
-
-#context-menu .item i {
-    display: inline-block;
-    margin-right: 5px;
+    border-radius: 2rem;
 }
 
 #context-menu hr {
-    margin: 2px 0px;
-    border-color: var(--snd-bf-color);
+    margin: 5px 0;  
+    border: none;
+    border-top: 1px solid #444; 
+}
+
+#context-menu .item span {
+    color: var(--text-color);
+}
+
+#context-menu .item i {
+    margin-left: 10px;
+}
+
+#context-menu .shortcut {
+    font-size: 11px;  
+    margin-right: auto; 
+}
+
+#context-menu .item span.name {
+    margin-right: 10px;
+    color: var(--text-color);
 }
