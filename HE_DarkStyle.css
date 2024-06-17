@@ -1040,6 +1040,7 @@ display:block;
     font-weight: 700;
     cursor: none;
     pointer-events: none;
+    left: 30%;
 }
 
 .contact form textarea {
@@ -1054,19 +1055,27 @@ display:block;
     position: relative; 
 }
 
-.contact form .input-box:nth-of-type(1) input:nth-of-type(2) + .label,
-.contact form .input-box:nth-of-type(2) input:nth-of-type(2) + .label {
-    left: 51%;
+.contact form .input-box:nth-of-type(1) input:nth-of-type(2) + .label {
+    left: 81%;
 }
 
+.contact form .input-box:nth-of-type(2) input:nth-of-type(2) + .label {
+    left: 88%;
+}
 
-.contact .input-box input:hover, .contact .input-box input:focus , .contact .input-box input.not-empty {
+.contact form .input-box textarea + .label {
+    left: 88%;
+}
+
+.contact .input-box input:hover, .contact .input-box input:focus , 
+.contact .input-box input.not-empty {
     border: 2px solid var(--main-color);
     outline: none;
     color: var(--text-color);
 }
 
-.contact .input-box input:focus + .label , .contact .input-box input.not-empty + .label {
+.contact .input-box input:focus + .label , 
+.contact .input-box input.not-empty + .label {
     color: var(--main-color);
     transform: translateY(-30px);
     transition: ease 0.3s;
