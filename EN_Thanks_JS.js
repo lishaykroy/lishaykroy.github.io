@@ -1,7 +1,9 @@
 /* Clear Storage On Refresh */
 
     window.addEventListener('beforeunload', function() {
+
         localStorage.clear();
+
     });
 
 /* Cursor Changes */
@@ -10,6 +12,7 @@
     var timeout;
 
     document.addEventListener("mousemove", (e) => {
+
         let x = e.pageX;
         let y = e.pageY;
 
@@ -30,64 +33,87 @@
         } else {
             cursor.style.display = "none";
         }
+        
     });
 
     document.addEventListener("mouseout", () => {
+
         cursor.style.display = "none";
+
     });
 
-/* Use Full Name Of Form Submitter */
+/* Use Full Name Of Form Submitter From The Main Page's Contact Form In Order To Use It In This Page */
 
     document.addEventListener('DOMContentLoaded', function() {
 
         var fullName = localStorage.getItem('fullName');
 
         if (fullName) {
-            document.getElementById('fullNameSpan').innerText = fullName;
-        }
-    });
 
+            document.getElementById('fullNameSpan').innerText = fullName;
+
+        }
+
+    });
 
 /* Context Menu */
 
-window.addEventListener("contextmenu", function(event){
-    event.preventDefault();
-    var contextElement = document.getElementById("context-menu");
-    contextElement.style.top = event.offsetY + "px";
-    contextElement.style.left = event.offsetX + "px";
-    contextElement.classList.add("active");
-});
+    window.addEventListener("contextmenu", function(event){
 
-window.addEventListener("click", function(){
-    var contextElement = document.getElementById("context-menu");
-    contextElement.classList.remove("active");
-});
+        event.preventDefault();
+        var contextElement = document.getElementById("context-menu");
+        contextElement.style.top = event.offsetY + "px";
+        contextElement.style.left = event.offsetX + "px";
+        contextElement.classList.add("active");
 
-document.getElementById("reload").addEventListener("click", function() {
-    location.reload();
-});
+    });
 
-document.getElementById("back").addEventListener("click", function() {
-    window.history.back();
-});
+    window.addEventListener("click", function(){
 
-document.getElementById("forward").addEventListener("click", function() {
-    window.history.forward();
-});
+        var contextElement = document.getElementById("context-menu");
+        contextElement.classList.remove("active");
 
-document.getElementById("exit").addEventListener("click", function() {
-    if (confirm("Are you sure you want to exit ?")) {
-        alert("I'm not gonna help you with this action , I want you to stay here .");
-    }
-});
+    });
 
-document.getElementById("print").addEventListener("click", function() {
-    window.print();
-});
+    document.getElementById("reload").addEventListener("click", function() {
 
-document.getElementById("save").addEventListener("click", function() {
-    var link = document.createElement('a');
-    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
-    link.download = 'Lishay Kroytoro Protfolio.html';
-    link.click();
-});
+        location.reload();
+
+    });
+
+    document.getElementById("back").addEventListener("click", function() {
+
+        window.history.back();
+
+    });
+
+    document.getElementById("forward").addEventListener("click", function() {
+
+        window.history.forward();
+
+    });
+
+    document.getElementById("exit").addEventListener("click", function() {
+
+        if (confirm("Are you sure you want to exit ?")) {
+
+            alert("I'm not gonna help you with this action , I want you to stay here .");
+
+        }
+
+    });
+
+    document.getElementById("print").addEventListener("click", function() {
+
+        window.print();
+
+    });
+
+    document.getElementById("save").addEventListener("click", function() {
+
+        var link = document.createElement('a');
+        link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
+        link.download = 'Lishay Kroytoro Protfolio.html';
+        link.click();
+
+    });

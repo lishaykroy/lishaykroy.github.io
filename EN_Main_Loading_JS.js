@@ -4,6 +4,7 @@
     var timeout;
 
     document.addEventListener("mousemove", (e) => {
+        
         cursor.style.left = e.pageX + "px";
         cursor.style.top = e.pageY + "px";
         cursor.style.display = "block";
@@ -17,5 +18,7 @@
     });
 
     document.addEventListener("mouseout", () => {
+
         cursor.style.display = "none";
+
     });

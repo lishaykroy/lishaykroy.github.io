@@ -1,30 +1,44 @@
-/* Toggle Icon Navbar */
+/* Hamburger Menu Icon */
 
-document.addEventListener('DOMContentLoaded', () => {
-    let menuIcon = document.querySelector('#menu-icon');
-    let navbar = document.querySelector('nav');
-    let menuLinks = navbar.querySelectorAll('a');
+    document.addEventListener('DOMContentLoaded', () => {
 
-/* Toggle Icon Navbar */
-    menuIcon.onclick = () => {
-        menuIcon.classList.toggle('fa-xmark');
-        navbar.classList.toggle('active');
-    }
+        let menuIcon = document.querySelector('#menu-icon');
+        let navbar = document.querySelector('nav');
+        let menuLinks = navbar.querySelectorAll('a');
 
-/* Hide the navigation menu and remove toggle icon when a menu item is clicked */
-    menuLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuIcon.classList.remove('fa-xmark');
-            navbar.classList.remove('active');
+    /* Toggle Icon Navbar */
+
+        menuIcon.onclick = () => {
+
+            menuIcon.classList.toggle('fa-xmark');
+            navbar.classList.toggle('active');
+
+        }
+
+    /* Hide the navigation menu and remove toggle icon when a menu item is clicked */
+
+        menuLinks.forEach(link => {
+
+            link.addEventListener('click', () => {
+
+                menuIcon.classList.remove('fa-xmark');
+                navbar.classList.remove('active');
+
+            });
+
         });
-    });
 
-/* Sticky Navbar */
-    let header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        header.classList.toggle('sticky', window.scrollY > 100);
+    /* Sticky Navbar */
+
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', () => {
+
+            header.classList.toggle('sticky', window.scrollY > 100);
+
+        });
+
     });
-});
 
 /* Scroll Section Active Link */
 
@@ -32,105 +46,151 @@ document.addEventListener('DOMContentLoaded', () => {
     let navLinks = document.querySelectorAll('header nav a');
 
     window.onscroll = () => {
+
         sections.forEach(sec => {
+
             let top = window.scrollY;
             let offset = sec.offsetTop - 150;
             let height = sec.offsetHeight;
             let id = sec.getAttribute('id');
 
             if(top >= offset && top < offset + height){
+
                 navLinks.forEach(links => {
+
                     links.classList.remove('active');
                     document.querySelector('header nav a[href*=' + id +']').classList.add('active');
+
                 });
+
             };
+
         });
+
     };
 
 /* Disable Form Submit Button Untill All Filled , Form Buttons Style When Full With Text And Redirect To Thank You Page*/
 
-document.addEventListener('DOMContentLoaded', function () {
-    const form = document.querySelector('#contactForm');
-    const inputs = form.querySelectorAll('input, textarea');
-    const submitButton = form.querySelector('.btn');
+    document.addEventListener('DOMContentLoaded', function () {
+        
+        const form = document.querySelector('#contactForm');
+        const inputs = form.querySelectorAll('input, textarea');
+        const submitButton = form.querySelector('.btn');
 
-    function showPopup() {
-        const popup = document.createElement('div');
-        popup.classList.add('popup');
-        popup.innerHTML = `
-            <div class="spinner"></div>
-        `;
-        document.body.appendChild(popup);
+        function showPopup() {
 
-        setTimeout(() => {
-            document.body.removeChild(popup);
-            redirectToLoader();
-        }, 1500);
-    }
+            const popup = document.createElement('div');
+            popup.classList.add('popup');
+            popup.innerHTML = `
+                <div class="spinner"></div>
+            `;
+            document.body.appendChild(popup);
 
-    function redirectToLoader() {
-        window.location.href = 'EN_Thanks_Loader.html';
-    }
+            setTimeout(() => {
+                document.body.removeChild(popup);
+                redirectToLoader();
+            }, 1500);
 
-    function checkForm() {
-        let allFilled = true;
+        }
+
+        function redirectToLoader() {
+
+            window.location.href = 'EN_Thanks_Loader.html';
+
+        }
+
+        function checkForm() {
+
+            let allFilled = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+
+                    allFilled = false;
+
+                }
+
+            });
+
+            submitButton.disabled = !allFilled;
+
+        }
+
+        form.addEventListener('submit', function (event) {
+
+            event.preventDefault(); 
+            showPopup(); 
+            submitForm();
+
+        });
+
+        form.addEventListener('input', checkForm);
+        checkForm();
+
         inputs.forEach(input => {
-            if (!input.value.trim()) {
-                allFilled = false;
-            }
-        });
-        submitButton.disabled = !allFilled;
-    }
 
-    form.addEventListener('submit', function (event) {
-        event.preventDefault(); 
-        showPopup(); 
-        submitForm();
+            input.addEventListener('input', function () {
+
+                if (input.value.length > 0) {
+                    input.classList.add('not-empty');
+                } else {
+                    input.classList.remove('not-empty');
+                }
+
+            });
+
+        });
+
+        function submitForm() {
+
+            const formData = new FormData(form);
+
+            fetch(form.getAttribute('action'), {
+
+                method: 'POST',
+                body: formData
+
+            })
+
+            .then(response => {
+
+                if (!response.ok) {
+
+                    throw new Error('Network response was not ok');
+
+                }
+
+                return response.text();
+
+            })
+
+            .then(() => {
+
+                redirectToLoader();
+
+            })
+
+            .catch(error => {
+
+                console.error('Error submitting form:', error);
+
+            });
+        }
+
     });
-
-    form.addEventListener('input', checkForm);
-    checkForm();
-
-    inputs.forEach(input => {
-        input.addEventListener('input', function () {
-            if (input.value.length > 0) {
-                input.classList.add('not-empty');
-            } else {
-                input.classList.remove('not-empty');
-            }
-        });
-    });
-
-    function submitForm() {
-        const formData = new FormData(form);
-        fetch(form.getAttribute('action'), {
-            method: 'POST',
-            body: formData
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(() => {
-            redirectToLoader();
-        })
-        .catch(error => {
-            console.error('Error submitting form:', error);
-        });
-    }
-});
 
 /* Redirect To Another Page On Refresh */
 
     if (sessionStorage.getItem('manuallyRefreshed')) {
+
         window.location.href = "EN_Main_Loading.html";
         sessionStorage.removeItem('manuallyRefreshed');
+
     }
 
     window.onbeforeunload = function () {
+
         sessionStorage.setItem('manuallyRefreshed', 'true');
+        
     };
 
 /* Text Typing Animation */
@@ -147,8 +207,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const typingSpeed = 100; 
 
     function typeText() {
+
         const role = roles[roleIndex];
         const roleSpan = document.getElementById('role');
+
         if (textIndex < role.length) {
             roleSpan.textContent += role[textIndex];
             textIndex++;
@@ -156,10 +218,13 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             setTimeout(deleteText, 1000); 
         }
+
     }
 
     function deleteText() {
+
         const roleSpan = document.getElementById('role');
+
         if (textIndex >= 0) {
             roleSpan.textContent = roles[roleIndex].substring(0, textIndex);
             textIndex--;
@@ -169,10 +234,13 @@ document.addEventListener('DOMContentLoaded', function () {
             textIndex = 0; 
             setTimeout(typeText, 1000); 
         }
+
     }
 
     window.onload = function () {
+
         typeText();
+
     };
 
 /* Image Changes */
@@ -189,8 +257,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let currentImageIndex = 0;
 
     function changeImage() {
+
         homeImg.src = images[currentImageIndex];
         currentImageIndex = (currentImageIndex + 1) % images.length;
+
     }
 
     changeImage();
@@ -205,17 +275,21 @@ document.addEventListener('DOMContentLoaded', function () {
          "I own a BSc in Industrial and Management Engineering and an M.B.A in Business Administration , both with specialization in Information Systems", 
          "As a UI/UX Designer, I specialize in creating a spectacular experience by using skills and combination of advanced technologies , creating distinct content and managing colors and graphics at the highest level", 
          "I was born in Israel , I have lived here since forever , the Israel's culture and beauty is all I know , i'm still excited every moment I dream about it , I will never forget her and I will never leave !"];
+        
         let currentIndex = 0;
         const textElement = document.getElementById("changingText");
     
         function changeText() {
+
           textElement.textContent = texts[currentIndex];
           currentIndex = (currentIndex + 1) % texts.length;
+
         }
 
         changeText();
 
         setInterval(changeText, 4800);
+
       });
 
 /* Cursor Changes */
@@ -223,27 +297,34 @@ document.addEventListener('DOMContentLoaded', function () {
     const cursor = document.querySelector('.cursor');
 
     function handleMouseMove(e) {
+
         cursor.style.top = e.clientY + "px";
         cursor.style.left = e.clientX + "px";
+
     }
 
     function isLinkOrIconOrInputElement(element) {
+
         return element.tagName === 'A' || element.tagName === 'I' || element.tagName === 'LI' || element.tagName === 'BUTTON';
+
     }
 
     function handleMouseOver(e) {
+
         if (isLinkOrIconOrInputElement(e.target)) {
             cursor.style.display = "none";
         } else {
             cursor.style.display = "block";
         }
+
     }
 
     function handleMouseLeave() {
+
         cursor.style.display = "block";
+
     }
 
-    // Add event listeners if screen width is greater than 768px
     if (window.innerWidth > 768) {
         document.addEventListener("mousemove", handleMouseMove);
         document.addEventListener("mouseover", handleMouseOver);
@@ -258,11 +339,11 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     } else {
-        cursor.style.display = "none"; // Ensure cursor is hidden on initial load
+        cursor.style.display = "none";
     }
 
-    // Recheck on window resize
     window.addEventListener('resize', () => {
+
         if (window.innerWidth > 768) {
             cursor.style.display = "block";
             document.addEventListener("mousemove", handleMouseMove);
@@ -284,23 +365,33 @@ document.addEventListener('DOMContentLoaded', function () {
             document.removeEventListener("mouseleave", handleMouseLeave);
             
             document.querySelectorAll('a, i, li, button').forEach(element => {
+
                 element.removeEventListener("mouseover", () => {
+
                     cursor.style.display = "none";
+
                 });
+
                 element.removeEventListener("mouseleave", () => {
+
                     cursor.style.display = "block";
+
                 });
+
             });
         }
+
     });
     
 /* Show And Hide End Icon On Header Based On Active Section */
 
     function setActiveSection() {
+
         const sections = document.querySelectorAll('section');
         const scrollPosition = window.scrollY;
 
         sections.forEach(section => {
+
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
 
@@ -309,10 +400,13 @@ document.addEventListener('DOMContentLoaded', function () {
             } else {
                 section.classList.remove('active');
             }
+
         });
+
     }
 
     function toggleEndIcon() {
+
         let currentSection = document.querySelector('section.active');
         let endIcon = document.querySelector('.end-icon');
 
@@ -321,86 +415,115 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             endIcon.style.display = 'none';
         }
+
     }
 
     setActiveSection();
     toggleEndIcon();
+
     window.addEventListener('scroll', () => {
+
         setActiveSection();
         toggleEndIcon();
+
     });
 
 /* Progress Bar */
 
     $(window).scroll(function(){
+
         var scroll = $(window).scrollTop(),
         dh = $(document).height(),
         wh = $(window).height();
         scrollPercent = ( scroll / (dh-wh)) * 100;
         $('#progressbar').css('height', scrollPercent + '%');
+
     })
 
 /* Timeline */
 
     $(".step").click( function() {
+
         $(this).addClass("active").prevAll().addClass("active");
         $(this).nextAll().removeClass("active");
+
     });
 
     $(".step01").click( function() {
+
         $("#line-progress").css("width", "3%");
         $(".discovery").addClass("active").siblings().removeClass("active");
+
     });
 
     $(".step02").click( function() {
+
         $("#line-progress").css("width", "25%");
         $(".strategy").addClass("active").siblings().removeClass("active");
+
     });
 
     $(".step03").click( function() {
+
         $("#line-progress").css("width", "50%");
         $(".creative").addClass("active").siblings().removeClass("active");
+
     });
 
     $(".step04").click( function() {
+
         $("#line-progress").css("width", "75%");
         $(".production").addClass("active").siblings().removeClass("active");
+
     });
 
     $(".step05").click( function() {
+
         $("#line-progress").css("width", "100%");
         $(".analysis").addClass("active").siblings().removeClass("active");
+
     });
 
 
 /* Info Button */
 
     function toggleMessages() {
+
         var message1 = document.getElementById("message1");
         var message2 = document.getElementById("message2");
         message1.style.display = (message1.style.display === "none") ? "block" : "none";
         message2.style.display = (message2.style.display === "none") ? "block" : "none";
+
     }
 
     document.getElementById("infoBtn").addEventListener("click", function(event) {
+
         console.log("Button clicked");
         toggleMessages();
         event.stopPropagation();
+
     });
 
     function handleDocumentClick(event) {
+
         var message1 = document.getElementById("message1");
         var message2 = document.getElementById("message2");
 
         if (!event.target.closest("#message1") && !event.target.closest("#message2")) {
+
             message1.style.display = "none";
             message2.style.display = "none";
+
         }
+
     }
+
     document.addEventListener("click", handleDocumentClick);
 
     document.addEventListener("DOMContentLoaded", function() {
+
         toggleMessages();
+
     });
 
  /* Skills Swiper */   
@@ -408,89 +531,119 @@ document.addEventListener('DOMContentLoaded', function () {
     var swipers = document.querySelectorAll(".mySwiper");
 
     swipers.forEach(swiper => {
+
         new Swiper(swiper, {
+
             slidesPerView: 5,
             spaceBetween: 30,
             grabCursor: true,
             navigation: {
+
             nextEl: swiper.querySelector(".swiper-button-next"),
             prevEl: swiper.querySelector(".swiper-button-prev"),
+
             }
+
         });
+
     });
  
 /* Filter Skills By Rating */
 
-document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function() {
 
-    function updateRatingCounts() {
-        const counts = {};
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            const rating = card.dataset.rating;
-            if (counts[rating]) {
-                counts[rating]++;
-            } else {
-                counts[rating] = 1;
-            }
-        });
+        function updateRatingCounts() {
 
-        const buttons = document.querySelectorAll('.filter-buttons button');
-        buttons.forEach(button => {
-            const rating = button.dataset.rating;
-            if (rating === 'all') {
-                button.textContent = `All (${cards.length})`;
-            } else {
-                button.textContent = `${rating} Stars (${counts[rating] || 0})`;
-            }
-        });
-    }
+            const counts = {};
+            const cards = document.querySelectorAll('.card');
 
-    function filterCards() {
-        const cards = document.querySelectorAll('.card');
-        const activeButtons = document.querySelectorAll('.filter-buttons button.active');
+            cards.forEach(card => {
 
-        cards.forEach(card => {
-            const rating = card.dataset.rating;
-            if (activeButtons.length === 0 || activeButtons[0].dataset.rating === 'all' || [...activeButtons].some(btn => btn.dataset.rating === rating)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
+                const rating = card.dataset.rating;
 
-    const filterButtons = document.querySelectorAll('.filter-buttons button');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            if (this.dataset.rating === 'all') {
-                const allIsActive = this.classList.contains('active');
-                filterButtons.forEach(btn => {
-                    btn.classList.toggle('active', !allIsActive);
-                });
-            } else {
-                const allButton = document.querySelector('.filter-buttons button[data-rating="all"]');
-                if (allButton.classList.contains('active')) {
-                    allButton.classList.remove('active');
+                if (counts[rating]) {
+                    counts[rating]++;
+                } else {
+                    counts[rating] = 1;
                 }
-                this.classList.toggle('active');
-            }
-            filterCards();
-            updateRatingCounts();
-        });
-    });
 
-    updateRatingCounts();
-});
+            });
+
+            const buttons = document.querySelectorAll('.filter-buttons button');
+
+            buttons.forEach(button => {
+
+                const rating = button.dataset.rating;
+
+                if (rating === 'all') {
+                    button.textContent = `All (${cards.length})`;
+                } else {
+                    button.textContent = `${rating} Stars (${counts[rating] || 0})`;
+                }
+
+            });
+
+        }
+
+        function filterCards() {
+
+            const cards = document.querySelectorAll('.card');
+            const activeButtons = document.querySelectorAll('.filter-buttons button.active');
+
+            cards.forEach(card => {
+
+                const rating = card.dataset.rating;
+
+                if (activeButtons.length === 0 || activeButtons[0].dataset.rating === 'all' || [...activeButtons].some(btn => btn.dataset.rating === rating)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+
+            });
+
+        }
+
+        const filterButtons = document.querySelectorAll('.filter-buttons button');
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener('click', function() {
+
+                if (this.dataset.rating === 'all') {
+                    const allIsActive = this.classList.contains('active');
+                    filterButtons.forEach(btn => {
+                        btn.classList.toggle('active', !allIsActive);
+                    });
+                } else {
+                    const allButton = document.querySelector('.filter-buttons button[data-rating="all"]');
+                    if (allButton.classList.contains('active')) {
+                        allButton.classList.remove('active');
+                    }
+                    this.classList.toggle('active');
+                }
+
+                filterCards();
+                updateRatingCounts();
+
+            });
+
+        });
+
+        updateRatingCounts();
+
+    });
 
 /* Skill Search Box X Button */
 
     document.addEventListener("DOMContentLoaded", function() {
+
         const searchBox = document.getElementById('searchBox');
         const clearSearchButton = document.getElementById('clearSearch');
         const noResultsMessage = document.querySelector('.no-results');
 
         searchBox.addEventListener('input', function() {
+
             if (searchBox.value.trim().length > 0) {
                 clearSearchButton.style.display = 'inline-block';
             } else {
@@ -498,20 +651,25 @@ document.addEventListener("DOMContentLoaded", function() {
             }
 
             filterCards(); 
+
         });
 
         clearSearchButton.addEventListener('click', function() {
+
             searchBox.value = ''; 
             clearSearchButton.style.display = 'none'; 
             filterCards(); 
+
         });
 
         function filterCards() {
+
             const searchValue = searchBox.value.trim().toLowerCase();
             const cards = document.querySelectorAll('.card');
             let hasResults = false;
 
             cards.forEach(card => {
+
                 const cardName = card.querySelector('.name span').textContent.toLowerCase();
                 const cardCategory = card.querySelector('button').textContent.toLowerCase();
                 const cardRating = card.getAttribute('data-rating').toLowerCase();
@@ -522,6 +680,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     card.style.display = 'none'; 
                 }
+
             });
 
             if (hasResults) {
@@ -529,12 +688,15 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 noResultsMessage.style.display = 'block'; 
             }
+
         }
+
     });
 
 /* Skill Search Box Function */
 
     document.addEventListener("DOMContentLoaded", function() {
+
         const searchBox = document.getElementById('searchBox');
         const noResultsMessage = document.querySelector('.no-results');
         const cards = document.querySelectorAll('.card');
@@ -544,10 +706,12 @@ document.addEventListener("DOMContentLoaded", function() {
         clearSearchButton.addEventListener('click', showAllCards);
 
         function filterCards() {
+
             const searchValue = searchBox.value.trim().toLowerCase();
             let foundMatch = false;
 
             cards.forEach((card, index) => {
+
                 const cardNameElement = card.querySelector('.name');
                 const cardButtonElement = card.querySelector('button');
 
@@ -556,6 +720,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 console.log('Button Element:', cardButtonElement);
 
                 if (cardNameElement !== null && cardButtonElement !== null) {
+                    
                     const cardName = cardNameElement.textContent.toLowerCase();
                     const cardField = cardButtonElement.textContent.toLowerCase();
                     const cardRating = card.getAttribute('data-rating');
@@ -569,6 +734,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 } else {
                     console.error(`Card ${index + 1}: One or more elements not found`);
                 }
+
             });
 
             if (foundMatch || searchValue === '') { 
@@ -576,56 +742,81 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 noResultsMessage.style.display = 'block'; 
             }
+
         }
 
         function showAllCards() {
+
             searchBox.value = '';
+
             cards.forEach(card => {
+
                 card.style.display = '';
+
             });
+
             noResultsMessage.style.display = 'none';
+
         }
+
     });
 
 /* Filter Skills By Field */
 
     document.addEventListener("DOMContentLoaded", function() {
+
         const buttons = document.querySelectorAll('.fields-buttons button');
         const cards = document.querySelectorAll('.card');
 
         function updateButtonCounts() {
+
             const counts = {
+
                 all: cards.length,
+
             };
 
             cards.forEach(card => {
+
                 const category = card.getAttribute('data-category');
+
                 if (counts[category]) {
                     counts[category]++;
                 } else {
                     counts[category] = 1;
                 }
+
             });
 
             buttons.forEach(button => {
+
                 const filter = button.getAttribute('data-filter');
                 button.textContent = `${button.textContent} (${counts[filter] || 0})`;
+
             });
+
         }
 
         function filterCards(selectedFilters) {
+
             cards.forEach(card => {
+
                 const category = card.getAttribute('data-category');
+
                 if (selectedFilters.includes(category) || selectedFilters.includes('all')) {
                     card.style.display = '';
                 } else {
                     card.style.display = 'none';
                 }
+
             });
+
         }
 
         buttons.forEach(button => {
+
             button.addEventListener('click', function() {
+
                 const filter = this.getAttribute('data-filter');
 
                 if (filter === 'all') {
@@ -634,22 +825,35 @@ document.addEventListener("DOMContentLoaded", function() {
                     this.classList.toggle('active', isActive);
 
                     buttons.forEach(btn => {
+
                         if (btn !== this) {
+
                             btn.classList.toggle('active', isActive);
+
                         }
+                        
                     });
+
                 } else {
 
                     this.classList.toggle('active');
 
                     const allButton = document.querySelector('.fields-buttons button[data-filter="all"]');
+
                     if (!allButton.classList.contains('active') && this.classList.contains('active')) {
+
                         buttons.forEach(btn => {
+
                             if (btn !== this && btn !== allButton) {
+
                                 btn.classList.remove('active');
+
                             }
+
                         });
+
                     }
+
                 }
 
                 const activeFilters = Array.from(buttons)
@@ -659,35 +863,47 @@ document.addEventListener("DOMContentLoaded", function() {
                 filterCards(activeFilters);
 
                 if (typeof Swiper !== 'undefined') {
+
                     swiper.update();
+
                 }
+
             });
+
         });
 
         updateButtonCounts();
+
     });
 
-
-/* Save Full Name Of Form Submitter */
+/* Save Full Name Of Form Submitter From Thhis Page's Contact Form In Order To Use It In The Next Page */
 
     document.addEventListener('DOMContentLoaded', function() {
 
         function saveFullName() {
+
             var fullName = document.getElementById('fullName').value;
             console.log('Full name captured:', fullName);
             localStorage.setItem('fullName', fullName);
+
         }
 
         document.getElementById('contactForm').addEventListener('submit', function(event) {
+
             saveFullName();
+
         });
+
     });
 
 /* Skills Sources Pop Up Window */
 
     function openPopup(id) {
+
         var popup = document.getElementById(id);
+
         if (popup) {
+
             popup.style.display = 'block';
 
             var centerX = window.innerWidth / 2;
@@ -695,41 +911,64 @@ document.addEventListener("DOMContentLoaded", function() {
     
             popup.style.top = centerY + 'px';
             popup.style.left = centerX + 'px';
+
         }
+
     }
 
     function closePopup(id) {
+
         var popup = document.getElementById(id);
+
         if (popup) {
+
             popup.style.display = 'none';
+
         }
+
     }
 
     document.querySelectorAll('.card-content button').forEach(button => {
+
         button.addEventListener('click', function() {
+
             const popupId = this.getAttribute('onclick').split("'")[1];
             openPopup(popupId);
+
         });
+
     });
 
     window.addEventListener('click', function(event) {
+
         document.querySelectorAll('.pop-up').forEach(popup => {
+
             if (popup.style.display === 'block' && !popup.contains(event.target) && !event.target.closest('.card-content button')) {
+
                 closePopup(popup.id);
+
             }
+
         });
+
     });
 
     function closePopupOnScroll() {
+
         window.addEventListener('scroll', function() {
 
             document.querySelectorAll('.pop-up').forEach(popup => {
+
                 if (popup.style.display === 'block') {
 
                     popup.style.display = 'none';
+
                 }
+
             });
+
         });
+
     }
 
     closePopupOnScroll();
@@ -740,6 +979,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const stylesheet = document.getElementById('stylesheet');
 
     cssToggle.addEventListener('click', () => {
+
         const currentHref = stylesheet.getAttribute('href');
         const newHref = currentHref === 'EN_DarkStyle.css' ? 'EN_LightStyle.css' : 'EN_DarkStyle.css';
         stylesheet.setAttribute('href', newHref);
@@ -751,49 +991,67 @@ document.addEventListener("DOMContentLoaded", function() {
             cssToggle.classList.remove('fa-moon');
             cssToggle.classList.add('fa-sun');
         }
-    });
 
+    });
 
 /* Context Menu */
 
-window.addEventListener("contextmenu", function(event){
-    event.preventDefault();
-    var contextElement = document.getElementById("context-menu");
-    contextElement.style.top = event.offsetY + "px";
-    contextElement.style.left = event.offsetX + "px";
-    contextElement.classList.add("active");
-});
+    window.addEventListener("contextmenu", function(event){
 
-window.addEventListener("click", function(){
-    var contextElement = document.getElementById("context-menu");
-    contextElement.classList.remove("active");
-});
+        event.preventDefault();
+        var contextElement = document.getElementById("context-menu");
+        contextElement.style.top = event.offsetY + "px";
+        contextElement.style.left = event.offsetX + "px";
+        contextElement.classList.add("active");
 
-document.getElementById("reload").addEventListener("click", function() {
-    location.reload();
-});
+    });
 
-document.getElementById("back").addEventListener("click", function() {
-    window.history.back();
-});
+    window.addEventListener("click", function(){
 
-document.getElementById("forward").addEventListener("click", function() {
-    window.history.forward();
-});
+        var contextElement = document.getElementById("context-menu");
+        contextElement.classList.remove("active");
 
-document.getElementById("exit").addEventListener("click", function() {
-    if (confirm("Are you sure you want to exit ?")) {
-        alert("I'm not gonna help you with this action , I want you to stay here .");
-    }
-});
+    });
 
-document.getElementById("print").addEventListener("click", function() {
-    window.print();
-});
+    document.getElementById("reload").addEventListener("click", function() {
 
-document.getElementById("save").addEventListener("click", function() {
-    var link = document.createElement('a');
-    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
-    link.download = 'Lishay Kroytoro Protfolio.html';
-    link.click();
-});
+        location.reload();
+
+    });
+
+    document.getElementById("back").addEventListener("click", function() {
+
+        window.history.back();
+
+    });
+
+    document.getElementById("forward").addEventListener("click", function() {
+
+        window.history.forward();
+
+    });
+
+    document.getElementById("exit").addEventListener("click", function() {
+
+        if (confirm("Are you sure you want to exit ?")) {
+
+            alert("I'm not gonna help you with this action , I want you to stay here .");
+
+        }
+
+    });
+
+    document.getElementById("print").addEventListener("click", function() {
+
+        window.print();
+
+    });
+
+    document.getElementById("save").addEventListener("click", function() {
+
+        var link = document.createElement('a');
+        link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
+        link.download = 'Lishay Kroytoro Protfolio.html';
+        link.click();
+        
+    });

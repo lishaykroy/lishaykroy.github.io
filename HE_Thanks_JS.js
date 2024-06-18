@@ -1,92 +1,92 @@
 /* Clear Storage On Refresh */
 
-window.addEventListener('beforeunload', function() {
-    localStorage.clear();
-});
+    window.addEventListener('beforeunload', function() {
+        localStorage.clear();
+    });
 
 /* Cursor Changes */
 
-const cursor = document.querySelector('.cursor');
-var timeout;
+    const cursor = document.querySelector('.cursor');
+    var timeout;
 
-document.addEventListener("mousemove", (e) => {
-    let x = e.pageX;
-    let y = e.pageY;
+    document.addEventListener("mousemove", (e) => {
+        let x = e.pageX;
+        let y = e.pageY;
 
-    cursor.style.top = y + "px";
-    cursor.style.left = x + "px";
-    cursor.style.display = "block";
-
-    clearTimeout(timeout);
-
-    timeout = setTimeout(() => {
-        cursor.style.display = "none";
-    }, 1000);
-
-    if (e.target.tagName !== 'A' && e.target.tagName !== 'I') {
+        cursor.style.top = y + "px";
+        cursor.style.left = x + "px";
         cursor.style.display = "block";
-    } else if (e.target.classList.contains('logo')) {
-        cursor.style.display = "block";
-    } else {
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => {
+            cursor.style.display = "none";
+        }, 1000);
+
+        if (e.target.tagName !== 'A' && e.target.tagName !== 'I') {
+            cursor.style.display = "block";
+        } else if (e.target.classList.contains('logo')) {
+            cursor.style.display = "block";
+        } else {
+            cursor.style.display = "none";
+        }
+    });
+
+    document.addEventListener("mouseout", () => {
         cursor.style.display = "none";
-    }
-});
+    });
 
-document.addEventListener("mouseout", () => {
-    cursor.style.display = "none";
-});
+/* Use Full Name Of Form Submitter From The Main Page's Contact Form In Order To Use It In This Page */
 
-/* Use Full Name Of Form Submitter */
+    document.addEventListener('DOMContentLoaded', function() {
 
-document.addEventListener('DOMContentLoaded', function() {
+        var fullName = localStorage.getItem('fullName');
 
-    var fullName = localStorage.getItem('fullName');
-
-    if (fullName) {
-        document.getElementById('fullNameSpan').innerText = fullName;
-    }
-});
+        if (fullName) {
+            document.getElementById('fullNameSpan').innerText = fullName;
+        }
+    });
 
 /* Context Menu */
 
-window.addEventListener("contextmenu", function(event){
-    event.preventDefault();
-    var contextElement = document.getElementById("context-menu");
-    contextElement.style.top = event.offsetY + "px";
-    contextElement.style.left = event.offsetX + "px";
-    contextElement.classList.add("active");
-});
+    window.addEventListener("contextmenu", function(event){
+        event.preventDefault();
+        var contextElement = document.getElementById("context-menu");
+        contextElement.style.top = event.offsetY + "px";
+        contextElement.style.left = event.offsetX + "px";
+        contextElement.classList.add("active");
+    });
 
-window.addEventListener("click", function(){
-    var contextElement = document.getElementById("context-menu");
-    contextElement.classList.remove("active");
-});
+    window.addEventListener("click", function(){
+        var contextElement = document.getElementById("context-menu");
+        contextElement.classList.remove("active");
+    });
 
-document.getElementById("reload").addEventListener("click", function() {
-    location.reload();
-});
+    document.getElementById("reload").addEventListener("click", function() {
+        location.reload();
+    });
 
-document.getElementById("back").addEventListener("click", function() {
-    window.history.back();
-});
+    document.getElementById("back").addEventListener("click", function() {
+        window.history.back();
+    });
 
-document.getElementById("forward").addEventListener("click", function() {
-    window.history.forward();
-});
+    document.getElementById("forward").addEventListener("click", function() {
+        window.history.forward();
+    });
 
-document.getElementById("exit").addEventListener("click", function() {
-    if (confirm("Are you sure you want to exit ?")) {
-        alert("I'm not gonna help you with this action , I want you to stay here .");
-    }
-});
+    document.getElementById("exit").addEventListener("click", function() {
+        if (confirm("Are you sure you want to exit ?")) {
+            alert("I'm not gonna help you with this action , I want you to stay here .");
+        }
+    });
 
-document.getElementById("print").addEventListener("click", function() {
-    window.print();
-});
+    document.getElementById("print").addEventListener("click", function() {
+        window.print();
+    });
 
-document.getElementById("save").addEventListener("click", function() {
-    var link = document.createElement('a');
-    link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
-    link.download = 'Lishay Kroytoro Protfolio.html';
-    link.click();
-});
+    document.getElementById("save").addEventListener("click", function() {
+        var link = document.createElement('a');
+        link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(document.documentElement.outerHTML);
+        link.download = 'Lishay Kroytoro Protfolio.html';
+        link.click();
+    });

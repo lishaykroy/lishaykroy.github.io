@@ -1,21 +1,24 @@
 /* Cursor Changes */
 
-const cursor = document.querySelector('.cursor');
-var timeout;
+    const cursor = document.querySelector('.cursor');
+    var timeout;
 
-document.addEventListener("mousemove", (e) => {
-    cursor.style.left = e.pageX + "px";
-    cursor.style.top = e.pageY + "px";
-    cursor.style.display = "block";
+    document.addEventListener("mousemove", (e) => {
 
-    clearTimeout(timeout);
+        cursor.style.left = e.pageX + "px";
+        cursor.style.top = e.pageY + "px";
+        cursor.style.display = "block";
 
-    timeout = setTimeout(() => {
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => {
+            cursor.style.display = "none";
+        }, 1000);
+        
+    });
+
+    document.addEventListener("mouseout", () => {
+
         cursor.style.display = "none";
-    }, 1000);
-    
-});
-
-document.addEventListener("mouseout", () => {
-    cursor.style.display = "none";
-});
+        
+    });
