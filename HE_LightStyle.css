@@ -1056,7 +1056,7 @@ span {
 }
 
 .contact form .input-box:nth-of-type(1) input:nth-of-type(2) + .label {
-    left: 81%;
+    left: 80%;
 }
 
 .contact form .input-box:nth-of-type(2) input:nth-of-type(2) + .label {
@@ -1272,400 +1272,6 @@ span {
     display: none;
 }
 
-/* Responsivness */
-
-@media (max-width: 1200px) {
-    html{
-        font-size: 55%;
-    }
-
-    .language-switcher {
-        display: none;
-    }
-
-    .mode-switcher {
-        display: none;
-    }
-
-    #infoContainer {
-        display: none;
-    }
-
-}
-
-@media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
-
-    section {
-        padding: 10rem 3%;
-    }
-
-    .services {
-        padding: 7rem;
-    }
-
-    .skills {
-        padding: 7rem;
-    }
-
-    .contact {
-        min-height: auto;
-    }
-
-    .footer {
-        padding: 2rem 3%;        
-    }
-    
-    .language-switcher {
-        display: none;
-    }
-
-    .mode-switcher {
-        display: none;
-    }
-
-    #infoContainer {
-        display: none;
-    }
-
-    .services p {
-        display: none;
-    }
-
-    .services h3 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .card-content .name {
-        font-size: 1rem;
-    }
-
-    .card-content .rating i {
-        font-size: 6px;
-    }
-
-    .card-content button {
-        font-size: 12px;
-        padding: 3px;
-    }
-
-    .filter-buttons {
-        display: none;
-    }
-
-    .fields-buttons {
-        display: none;
-    }
-
-    #searchBox {
-        display: none;
-    }
-
-    .container {
-        margin-left: 0;
-    }
-    
-    .image img {
-        width: 30px;
-        height: 30px;
-        border: 1px solid var(--main-color);
-    }
-    
-    .phone-only {
-        display: block;
-    }
-}
-
-
-@media (max-width: 768px) {
-    #menu-icon {
-        display: block;
-    }
-
-    .home .down-icon {
-        display: none;
-    }
-
-    nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: .1rem solid rgba(0, 0, 0, .2);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
-        display: none;
-    }
-
-    nav.active {
-        display: block;
-    }
-
-    nav a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-        text-align: center;
-    }
-
-    .home {
-        flex-direction: column;
-    }
-
-    .home content h1 {
-        font-size: 5rem;
-    }
-
-    .home content h3 {
-        font-size: 2.6rem;
-    }
-
-    .home content {
-        order: 2;
-    }
-
-    .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
-    }
-
-    .about {
-        flex-direction: column;
-    }
-
-    .about-img img {
-        width: 90vw;
-        margin-top: 4rem;
-    }
-
-    .services img {
-        margin-bottom: 3rem;
-    }
-
-    .skills h2 {
-        margin-bottom: 3rem;       
-    }
-
-    .language-switcher {
-        display: none;
-    }
-
-    .mode-switcher {
-        display: none;
-    }
-
-    #infoContainer {
-        display: none;
-    }
-
-    .services p {
-        display: none;
-    }
-
-    .services h3 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .card-content .name {
-        font-size: 1rem;
-    }
-
-    .card-content .rating i {
-        font-size: 6px;
-    }
-
-    .card-content button {
-        font-size: 6px;
-        padding: 2px;
-    }
-
-    .filter-buttons {
-        display: none;
-    }
-
-    .fields-buttons {
-        display: none;
-    }
-
-    .end-icon {
-        display: none !important;
-    }
-
-    #searchBox {
-        display: none;
-    }
-
-    .container {
-        margin-left: 0;
-    }
-
-    .image img {
-        width: 30px;
-        height: 30px;
-        border: 1px solid var(--main-color);
-    }
-
-    .cursor {
-        display: none;
-    }
-
-    .card {
-        width: 350px;
-        height: 140px;
-        border-radius: 50%;
-    }
-
-    .contact .up-icon {
-        display: none;
-    }
-    
-}
-
-@media (max-width: 617px) {
-    .home-img img {
-        width: 80vw;
-        margin-top: 8rem;
-    }   
-
-    .about-img img {
-        width: 100vw;
-        margin-top: 4rem;
-    }    
-
-    .language-switcher {
-        display: none;
-    }
-
-    .mode-switcher {
-        display: none;
-    }
-
-    #infoContainer {
-        display: none;
-    }
-
-    .services p {
-        display: none;
-    }
-
-    .services h3 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .card-content .name {
-        font-size: 1rem;
-    }
-
-    .card-content .rating i {
-        font-size: 6px;
-    }
-
-    .card-content button {
-        font-size: 6px;
-        padding: 2px;
-    }
-
-    .filter-buttons {
-        display: none;
-    }
-
-    .fields-buttons {
-        display: none;
-    }
-
-    .end-icon {
-        display: none !important;
-    }
-
-    #searchBox {
-        display: none;
-    }
-
-    .container {
-        margin-left: 0;
-    }
-
-    .image img {
-        width: 30px;
-        height: 30px;
-        border: 1px solid var(--main-color);
-    }
-
-}
-
-@media (max-width: 450px) {
-    html{
-        font-size: 50%;
-    }
-
-    .language-switcher {
-        display: none;
-    }
-
-    .mode-switcher {
-        display: none;
-    }
-
-    #infoContainer {
-        display: none;
-    }
-
-    .services p {
-        display: none;
-    }
-
-    .services h3 {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-    }
-
-    .card-content .name {
-        font-size: 1rem;
-    }
-
-    .card-content .rating i {
-        font-size: 6px;
-    }
-
-    .card-content button {
-        font-size: 6px;
-        padding: 2px;
-    }
-
-    .filter-buttons {
-        display: none;
-    }
-
-    .fields-buttons {
-        display: none;
-    }
-
-    .end-icon {
-        display: none !important;
-    }
-
-    #searchBox {
-        display: none;
-    }
-
-    .container {
-        margin-left: 0;
-    }
-
-    .image img {
-        width: 30px;
-        height: 30px;
-        border: 1px solid var(--main-color);
-    }
-
-}
-
 /* Cursor */
 
 .cursor {
@@ -1761,4 +1367,188 @@ span {
 #context-menu .item span.name {
     margin-right: 10px;
     color: var(--bg-color);
+}
+
+/* Responsivness */
+
+@media (max-width: 1200px) {
+    html{
+        font-size: 55%;
+    }
+
+    .language-switcher {
+        display: none;
+    }
+
+    .mode-switcher {
+        display: none;
+    }
+
+    #infoContainer {
+        display: none;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3%;
+    }
+
+    .services {
+        padding: 7rem;
+    }
+
+    .skills {
+        padding: 7rem;
+    }
+
+    .contact {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;        
+    }
+
+    .services p {
+        display: none;
+    }
+
+    .services h3 {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+
+    .card-content .name {
+        font-size: 1rem;
+    }
+
+    .card-content .rating i {
+        font-size: 6px;
+    }
+
+    .card-content button {
+        font-size: 12px;
+        padding: 3px;
+    }
+
+    .filter-buttons {
+        display: none;
+    }
+
+    .fields-buttons {
+        display: none;
+    }
+
+    #searchBox {
+        display: none;
+    }
+
+    .container {
+        margin-left: 0;
+    }
+    
+    .image img {
+        width: 30px;
+        height: 30px;
+        border: 1px solid var(--main-color);
+    }
+    
+    .phone-only {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .home .down-icon {
+        display: none;
+    }
+    
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        text-align: center;
+    }
+
+    .home {
+        flex-direction: column;
+    }
+
+    .home content h1 {
+        font-size: 5rem;
+    }
+
+    .home content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home content {
+        order: 2;
+    }
+
+    .home-img img {
+        width: 70vw;
+        margin-top: 2rem;
+    }
+
+    .about {
+        flex-direction: column;
+    }
+
+    .services img {
+        margin-bottom: 3rem;
+    }
+
+    .skills h2 {
+        margin-bottom: 3rem;       
+    }
+
+    .end-icon {
+        display: none !important;
+    }
+
+    .cursor {
+        display: none;
+    }
+
+    .card {
+        width: 350px;
+        height: 140px;
+        border-radius: 50%;
+    }
+    
+    .contact .up-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 450px) {
+    html{
+        font-size: 50%;
+    }
 }
