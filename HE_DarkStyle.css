@@ -732,6 +732,7 @@ display:block;
     padding: 10px;
     width: 100%;
     box-sizing: border-box; 
+    direction: rtl;
 }
 
 #searchBox.active {
@@ -746,7 +747,7 @@ display:block;
 
 #clearSearch {
     position: absolute;
-    right: 10px;
+    left: 20px;
     top: 50%;
     transform: translateY(-50%);
     display: none;
@@ -769,28 +770,41 @@ display:block;
     z-index: 5;
 }
 
+.fields-buttons-container {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.fields-buttons-wrapper {
+    overflow-x: auto; 
+    white-space: nowrap; 
+    width: 100%; 
+}
+
 .fields-buttons {
-    position: absolute;
-    top: 235px;
-    left: 200px;
-    display: flex;
+    display: inline-flex; 
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    white-space: nowrap; 
+    padding-bottom: 10px; 
+    box-sizing: border-box;
 }
 
 .fields-buttons button {
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px; 
     color: var(--text-color);
     background: var(--bg-color);
     padding: 5px 10px;
     border: 1px solid var(--main-color);
     border-radius: 20px;
     font-weight: 500;
-    margin-right: 5px;
-    z-index: 10;
     min-width: 90px;
     text-align: center;
-    box-sizing: border-box;
+    white-space: nowrap;
+    box-sizing: border-box; 
 }
 
 .fields-buttons button:hover {
@@ -806,9 +820,7 @@ display:block;
 }
 
 .fields-buttons h2 {
-    position: relative;
-    left: -20px;
-    top: 5px;
+    margin-bottom: 20px;
 }
 
 .filter-buttons {
@@ -855,17 +867,16 @@ display:block;
 .container {
     position: relative;
     display: flex;
+    justify-content: center;
     overflow-y: hidden;
-    margin-top: 50px;
-    margin-left: 50px;
-    width: 100%;
 }
 
 .container .box {
     padding: 30px;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     height: 310px;
+    box-sizing: border-box;
 }
 
 .swiper-wrapper {
@@ -1257,22 +1268,6 @@ display:block;
         color: var(--main-color);
     }
 
-/* Phone Only */
-
-.phone-only {
-    align-items: center;
-    margin-top: 20px;
-    position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-35%);
-    font-size: 1.5rem;
-    font-weight: 700;
-    font-style: bold;
-    color: var(--text-color);
-    display: none;
-}
-
 /* Cursor */
 
 .cursor {
@@ -1526,23 +1521,11 @@ display:block;
     .filter-buttons {
         display: none;
     }
-
-    .fields-buttons {
-        display: none;
-    }
-    
-    .container {
-        margin-left: 0;
-    }
     
     .image img {
         width: 30px;
         height: 30px;
         border: 1px solid var(--main-color);
-    }
-    
-    .phone-only {
-        display: block;
     }
 }
 
