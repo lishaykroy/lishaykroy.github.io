@@ -117,3 +117,93 @@
         link.click();
         
     });
+
+/* Toast Notifications */
+
+    let toastTimeouts = {};
+    let toastStartTimes = {};
+
+    function showToast(toastId, nextToastId) {
+
+        var toast = document.getElementById(toastId);
+        toast.className = "toast show";
+
+        var progress = toast.querySelector('.countdown-progress');
+        progress.style.width = '100%';
+        toastStartTimes[toastId] = Date.now();
+
+        clearTimeout(toastTimeouts[toastId]);
+
+        toastTimeouts[toastId] = setTimeout(function() {
+            hideToast(toastId);
+            if (nextToastId) {
+                setTimeout(function() {
+                    showToast(nextToastId, getNextToastId(nextToastId));
+                }, 10000);
+            }
+        }, 10000); 
+
+        animateProgressBar(progress, toastId);
+
+    }
+
+    function hideToast(toastId) {
+
+        var toast = document.getElementById(toastId);
+        toast.className = toast.className.replace("show", "hide");
+        clearTimeout(toastTimeouts[toastId]);
+
+    }
+
+    function closeToast(toastId) {
+
+        hideToast(toastId);
+        
+    }
+
+    function animateProgressBar(progressElement, toastId) {
+
+        var start = toastStartTimes[toastId];
+        var toastDuration = 10000;
+
+        function step() {
+
+            var progress = Math.max(0, 100 - ((Date.now() - start) / toastDuration) * 100);
+            progressElement.style.width = progress + '%';
+
+            if (progress > 0) {
+
+                requestAnimationFrame(step);
+
+            }
+
+        }
+
+        requestAnimationFrame(step);
+
+    }
+
+    function getNextToastId(currentToastId) {
+
+        switch(currentToastId) {
+
+            case 'toast1': return 'toast2';
+            case 'toast2': return 'toast3';
+            case 'toast3': return 'toast4';
+            case 'toast4': return 'toast5';
+            case 'toast5': return 'toast6';
+            case 'toast6': return 'toast7';
+            case 'toast7': return 'toast8';
+            default: return null;
+
+        }
+
+    }
+
+    window.onload = function() {
+
+        setTimeout(function() {
+            showToast('toast1', 'toast2');
+        }, 5000);
+
+    }
