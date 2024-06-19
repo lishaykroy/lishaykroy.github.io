@@ -117,3 +117,78 @@
         link.click();
 
     });
+
+/* Toast Notifications */
+
+    let toastTimeouts = {};
+    let toastStartTimes = {};
+    var currentToastId = null;
+
+    function showToast(toastId, nextToastId) {
+
+        if (currentToastId) {
+            
+            hideToast(currentToastId);
+
+        }
+
+        var toast = document.getElementById(toastId);
+        toast.className = "toast show";
+
+        var progress = toast.querySelector('.countdown-progress');
+        progress.style.width = '100%';
+        toastStartTimes[toastId] = Date.now();
+
+        toastTimeouts[toastId] = setTimeout(function() {
+            hideToast(toastId);
+        }, 10000); 
+
+        currentToastId = toastId;
+
+        animateProgressBar(progress, toastId);
+
+    }
+
+    function hideToast(toastId) {
+
+        var toast = document.getElementById(toastId);
+        toast.className = toast.className.replace("show", "hide");
+        clearTimeout(toastTimeouts[toastId]);
+
+    }
+
+    function closeToast(toastId) {
+
+        hideToast(toastId);
+        
+    }
+
+    function animateProgressBar(progressElement, toastId) {
+
+        var start = toastStartTimes[toastId];
+        var toastDuration = 10000;
+
+        function step() {
+
+            var progress = Math.max(0, 100 - ((Date.now() - start) / toastDuration) * 100);
+            progressElement.style.width = progress + '%';
+
+            if (progress > 0) {
+
+                requestAnimationFrame(step);
+
+            }
+
+        }
+
+        requestAnimationFrame(step);
+
+    }
+
+    window.onload = function() {
+
+        setTimeout(function() {
+            showToast('toast');
+        }, 5000);
+
+    }
