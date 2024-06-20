@@ -15,12 +15,12 @@
 
 /* Theme Colors */
 
-    :root {
-        --bg-color: #fff;
-        --snd-bf-color: #efeff1;
-        --text-color:#C243EE;
-        --main-color: #191f36;
-    }
+:root {
+    --bg-color: #fff;
+    --snd-bf-color: #efeff1;
+    --text-color:#C243EE;
+    --main-color: #191f36;
+}
 
 html {
     font-size: 62.5%;

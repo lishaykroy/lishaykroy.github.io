@@ -13,14 +13,14 @@
     font-family: "Nunito", sans-serif;
 }
 
-    /* Theme Colors */
+/* Theme Colors */
 
-    :root {
-        --bg-color: #191f36;
-        --snd-bf-color: #262B40;
-        --text-color: #fff;
-        --main-color: #C243EE;
-    }
+:root {
+    --bg-color: #191f36;
+    --snd-bf-color: #262B40;
+    --text-color: #fff;
+    --main-color: #C243EE;
+}
 
 html {
     font-size: 62.5%;
