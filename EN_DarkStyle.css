@@ -1603,6 +1603,10 @@ display:block;
         left: 50%;
         transform: translateX(-50%);
     }
+
+    #progressbar {
+        width: 5px;
+    }
 }
 
 @media (max-width: 450px) {
