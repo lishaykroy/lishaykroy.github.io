@@ -158,7 +158,14 @@
     function closeToast(toastId) {
 
         hideToast(toastId);
-        
+        var nextToastId = getNextToastId(toastId);
+
+        if (nextToastId) {
+            setTimeout(function() {
+                showToast(nextToastId, getNextToastId(nextToastId));
+            }, 10000);
+        }
+
     }
 
     function animateProgressBar(progressElement, toastId) {
