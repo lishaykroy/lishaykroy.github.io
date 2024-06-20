@@ -195,53 +195,57 @@
 
 /* Text Typing Animation */
 
-    const roles = [
-        "Data Analyst",
-        "I&M Engineer",
-        "UI/UX Designer",
-        "Proud Israeli"
-    ];
+    document.addEventListener("DOMContentLoaded", function() {
 
-    let roleIndex = 0;
-    let textIndex = 0;
-    const typingSpeed = 100; 
+        const roles = [
+            "Data Analyst",
+            "I&M Engineer",
+            "UI/UX Designer",
+            "Proud Israeli"
+        ];
 
-    function typeText() {
+        let roleIndex = 0;
+        let textIndex = 0;
+        const typingSpeed = 100; 
 
-        const role = roles[roleIndex];
-        const roleSpan = document.getElementById('role');
+        function typeText() {
 
-        if (textIndex < role.length) {
-            roleSpan.textContent += role[textIndex];
-            textIndex++;
-            setTimeout(typeText, typingSpeed);
-        } else {
-            setTimeout(deleteText, 1000); 
+            const role = roles[roleIndex];
+            const roleSpan = document.getElementById('role');
+
+            if (textIndex < role.length) {
+                roleSpan.textContent += role[textIndex];
+                textIndex++;
+                setTimeout(typeText, typingSpeed);
+            } else {
+                setTimeout(deleteText, 1000); 
+            }
+
         }
 
-    }
+        function deleteText() {
 
-    function deleteText() {
+            const roleSpan = document.getElementById('role');
 
-        const roleSpan = document.getElementById('role');
+            if (textIndex >= 0) {
+                roleSpan.textContent = roles[roleIndex].substring(0, textIndex);
+                textIndex--;
+                setTimeout(deleteText, typingSpeed);
+            } else {
+                roleIndex = (roleIndex + 1) % roles.length;
+                textIndex = 0; 
+                setTimeout(typeText, 1000); 
+            }
 
-        if (textIndex >= 0) {
-            roleSpan.textContent = roles[roleIndex].substring(0, textIndex);
-            textIndex--;
-            setTimeout(deleteText, typingSpeed);
-        } else {
-            roleIndex = (roleIndex + 1) % roles.length;
-            textIndex = 0; 
-            setTimeout(typeText, 1000); 
         }
 
-    }
+        window.onload = function () {
 
-    window.onload = function () {
+            typeText();
 
-        typeText();
+        };
 
-    };
+    });
 
 /* Image Changes */
 
