@@ -195,60 +195,6 @@
         sessionStorage.setItem('manuallyRefreshed', 'true');
 
     };
-
-/* Text Typing Animation */
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-        const roles = [
-            "דאטה אנליסט",
-            "מהנדס תעשייה וניהול",
-            "מעצב חוויית משתמש",
-            "ישראלי גאה"
-        ];
-
-        let roleIndex = 0;
-        let textIndex = 0;
-        const typingSpeed = 100; 
-
-        function typeText() {
-
-            const role = roles[roleIndex];
-            const roleSpan = document.getElementById('role');
-
-            if (textIndex < role.length) {
-                roleSpan.textContent += role[textIndex];
-                textIndex++;
-                setTimeout(typeText, typingSpeed);
-            } else {
-                setTimeout(deleteText, 1000); 
-            }
-
-        }
-
-        function deleteText() {
-
-            const roleSpan = document.getElementById('role');
-
-            if (textIndex >= 0) {
-                roleSpan.textContent = roles[roleIndex].substring(0, textIndex);
-                textIndex--;
-                setTimeout(deleteText, typingSpeed);
-            } else {
-                roleIndex = (roleIndex + 1) % roles.length;
-                textIndex = 0; 
-                setTimeout(typeText, 1000); 
-            }
-
-        }
-
-        window.onload = function () {
-
-            typeText();
-
-        };
-
-    });
     
 /* Image Changes */
 
@@ -1043,99 +989,158 @@
         
     });
 
-/* Toast Notifications */
+/* Toast Notifications + Text Typing Animation */
 
-    let toastTimeouts = {};
-    let toastStartTimes = {};
+    document.addEventListener("DOMContentLoaded", function() {
 
-    function showToast(toastId, nextToastId) {
+        let toastTimeouts = {};
+        let toastStartTimes = {};
 
-        var toast = document.getElementById(toastId);
-        toast.className = "toast show";
+        function showToast(toastId, nextToastId) {
 
-        var progress = toast.querySelector('.countdown-progress');
-        progress.style.width = '100%';
-        toastStartTimes[toastId] = Date.now();
+            var toast = document.getElementById(toastId);
+            toast.className = "toast show";
 
-        clearTimeout(toastTimeouts[toastId]);
+            var progress = toast.querySelector('.countdown-progress');
+            progress.style.width = '100%';
+            toastStartTimes[toastId] = Date.now();
 
-        toastTimeouts[toastId] = setTimeout(function() {
+            clearTimeout(toastTimeouts[toastId]);
+
+            toastTimeouts[toastId] = setTimeout(function() {
+                hideToast(toastId);
+                if (nextToastId) {
+                    setTimeout(function() {
+                        showToast(nextToastId, getNextToastId(nextToastId));
+                    }, 10000);
+                }
+            }, 10000); 
+
+            animateProgressBar(progress, toastId);
+
+        }
+
+        function hideToast(toastId) {
+
+            var toast = document.getElementById(toastId);
+            toast.className = toast.className.replace("show", "hide");
+            clearTimeout(toastTimeouts[toastId]);
+
+        }
+
+        function closeToast(toastId) {
+
             hideToast(toastId);
+            var nextToastId = getNextToastId(toastId);
+
             if (nextToastId) {
                 setTimeout(function() {
                     showToast(nextToastId, getNextToastId(nextToastId));
                 }, 10000);
             }
-        }, 10000); 
 
-        animateProgressBar(progress, toastId);
-
-    }
-
-    function hideToast(toastId) {
-
-        var toast = document.getElementById(toastId);
-        toast.className = toast.className.replace("show", "hide");
-        clearTimeout(toastTimeouts[toastId]);
-
-    }
-
-    function closeToast(toastId) {
-
-        hideToast(toastId);
-        var nextToastId = getNextToastId(toastId);
-
-        if (nextToastId) {
-            setTimeout(function() {
-                showToast(nextToastId, getNextToastId(nextToastId));
-            }, 10000);
         }
 
-    }
+        function animateProgressBar(progressElement, toastId) {
 
-    function animateProgressBar(progressElement, toastId) {
+            var start = toastStartTimes[toastId];
+            var toastDuration = 10000;
 
-        var start = toastStartTimes[toastId];
-        var toastDuration = 10000;
+            function step() {
 
-        function step() {
+                var progress = Math.max(0, 100 - ((Date.now() - start) / toastDuration) * 100);
+                progressElement.style.width = progress + '%';
 
-            var progress = Math.max(0, 100 - ((Date.now() - start) / toastDuration) * 100);
-            progressElement.style.width = progress + '%';
+                if (progress > 0) {
 
-            if (progress > 0) {
+                    requestAnimationFrame(step);
 
-                requestAnimationFrame(step);
+                }
+
+            }
+
+            requestAnimationFrame(step);
+
+        }
+
+        function getNextToastId(currentToastId) {
+
+            switch(currentToastId) {
+
+                case 'toast1': return 'toast2';
+                case 'toast2': return 'toast3';
+                case 'toast3': return 'toast4';
+                case 'toast4': return 'toast5';
+                case 'toast5': return 'toast6';
+                case 'toast6': return 'toast7';
+                case 'toast7': return 'toast8';
+                default: return null;
 
             }
 
         }
 
-        requestAnimationFrame(step);
+        function initToasts() {
 
-    }
-
-    function getNextToastId(currentToastId) {
-
-        switch(currentToastId) {
-
-            case 'toast1': return 'toast2';
-            case 'toast2': return 'toast3';
-            case 'toast3': return 'toast4';
-            case 'toast4': return 'toast5';
-            case 'toast5': return 'toast6';
-            case 'toast6': return 'toast7';
-            case 'toast7': return 'toast8';
-            default: return null;
+            setTimeout(function() {
+                showToast('toast1', 'toast2');
+            }, 5000);
 
         }
 
-    }
+        const roles = [
+            "דאטה אנליסט",
+            "מהנדס תעשייה וניהול",
+            "מעצב חוויית משתמש",
+            "ישראלי גאה"
+        ];
 
-    window.onload = function() {
+        let roleIndex = 0;
+        let textIndex = 0;
+        const typingSpeed = 100; 
 
-        setTimeout(function() {
-            showToast('toast1', 'toast2');
-        }, 5000);
+        function typeText() {
 
-    }
+            const role = roles[roleIndex];
+            const roleSpan = document.getElementById('role');
+
+            if (textIndex < role.length) {
+                roleSpan.textContent += role[textIndex];
+                textIndex++;
+                setTimeout(typeText, typingSpeed);
+            } else {
+                setTimeout(deleteText, 1000); 
+            }
+
+        }
+
+        function deleteText() {
+
+            const roleSpan = document.getElementById('role');
+
+            if (textIndex >= 0) {
+                roleSpan.textContent = roles[roleIndex].substring(0, textIndex);
+                textIndex--;
+                setTimeout(deleteText, typingSpeed);
+            } else {
+                roleIndex = (roleIndex + 1) % roles.length;
+                textIndex = 0; 
+                setTimeout(typeText, 1000); 
+            }
+
+        }
+
+        function initTextTyping() {
+
+            typeText();
+
+        }
+
+        window.onload = function() {
+
+            initToasts();
+            initTextTyping();
+            
+        };
+
+    });
