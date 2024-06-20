@@ -1081,7 +1081,14 @@
         }
 
         function initToasts() {
-
+            
+            document.querySelectorAll('.toast .close-btn').forEach(function(closeBtn) {
+                closeBtn.addEventListener('click', function() {
+                    var toastId = this.closest('.toast').id;
+                    closeToast(toastId);
+                });
+            });
+    
             setTimeout(function() {
                 showToast('toast1', 'toast2');
             }, 5000);
