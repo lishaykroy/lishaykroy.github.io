@@ -1006,6 +1006,48 @@
         
     });
 
+/* Contact Form X Buttons */
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const pairs = [
+            { inputId: 'fullName', buttonId: 'clear-btn1' },
+            { inputId: 'emailAddress', buttonId: 'clear-btn2' },
+            { inputId: 'phoneNumber', buttonId: 'clear-btn3' },
+            { inputId: 'subject', buttonId: 'clear-btn4' },
+            { inputId: 'messageContent', buttonId: 'clear-btn5' }
+        ];
+
+        pairs.forEach(pair => {
+
+            const searchBox = document.getElementById(pair.inputId);
+            const clearButton = document.getElementById(pair.buttonId);
+
+            if (searchBox && clearButton) {
+
+                searchBox.addEventListener('input', function() {
+
+                    if (searchBox.value.trim().length > 0) {
+                        clearButton.style.display = 'inline-block';
+                    } else {
+                        clearButton.style.display = 'none';
+                    }
+
+                });
+
+                clearButton.addEventListener('click', function() {
+
+                    searchBox.value = '';
+                    clearButton.style.display = 'none';
+                    
+                });
+
+            }
+
+        });
+
+    });
+
 /* Toast Notifications + Text Typing Animation */
 
     document.addEventListener("DOMContentLoaded", function() {

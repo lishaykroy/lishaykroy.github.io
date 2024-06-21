@@ -1157,6 +1157,42 @@ span {
     }
 }
 
+#clear-btn1 , #clear-btn3 {
+    position: absolute;
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    left: 45%;
+    top: 35%;
+}
+
+#clear-btn2 , #clear-btn4 {
+    position: absolute;
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    left: 96%;
+    top: 35%;
+}
+
+#clear-btn5 {
+    position: absolute;
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    left: 96%;
+    top: 8%;
+}
+
 /* Move One Section Down Button */
 
 .down-icon {

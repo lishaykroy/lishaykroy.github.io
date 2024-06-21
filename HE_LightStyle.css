@@ -1041,14 +1041,13 @@ span {
 
 .contact form .label {
     font-size: 1.6rem;
-    color: var(--main-color);
+    color: var(--text-color);
     background: transparent;
     position: absolute;
     padding: 1.5rem;
     font-weight: 700;
-    cursor: none;
     pointer-events: none;
-    left: 30%;
+    left: 40%;
 }
 
 .contact form textarea {
@@ -1063,16 +1062,20 @@ span {
     position: relative; 
 }
 
+.contact form .input-box:nth-of-type(1) input:nth-of-type(1) + .label {
+    left: 32%;
+}
+
 .contact form .input-box:nth-of-type(1) input:nth-of-type(2) + .label {
-    left: 80%;
+    left: 88%;
 }
 
 .contact form .input-box:nth-of-type(2) input:nth-of-type(2) + .label {
-    left: 88%;
+    left: 85%;
 }
 
 .contact form .input-box textarea + .label {
-    left: 88%;
+    left: 91%;
 }
 
 .contact .input-box input:hover, .contact .input-box input:focus , 
@@ -1164,6 +1167,42 @@ span {
     100% {
         transform: rotate(360deg);
     }
+}
+
+#clear-btn1 , #clear-btn3 {
+    position: absolute;
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    left: 4%;
+    top: 35%;
+}
+
+#clear-btn2 , #clear-btn4 {
+    position: absolute;
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    left: 55%;
+    top: 35%;
+}
+
+#clear-btn5 {
+    position: absolute;
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--main-color);
+    cursor: pointer;
+    left: 4%;
+    top: 9%;
 }
 
 /* Move One Section Down Button */
