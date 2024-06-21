@@ -181,6 +181,23 @@ section {
     background: var(--snd-bf-color);
 }
 
+#message3 {
+    display: none;
+    background: var(--bg-color);
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    border: 2px solid var(--main-color);
+    border-radius: .8rem;
+    padding: 10px;
+    width: 500px;
+    top: calc(100% + 137px);
+}
+
+#message3:hover {
+    background: var(--snd-bf-color);
+}
+
 #infoContainer.show-messages #message1, 
 #infoContainer.show-messages #message2 {
     display: block;
@@ -235,6 +252,25 @@ section {
     padding: 0.2rem 0.6rem;
     font-size: 1rem;
     cursor: none;
+}
+
+.option {
+    background: transparent;
+    color: var(--main-color);
+    border-radius: 2rem;
+    border: 1px solid var(--main-color);
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    position: absolute;
+    bottom: 2px;
+    right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.option:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
 }
 
 /* Dark & Light Switcher */

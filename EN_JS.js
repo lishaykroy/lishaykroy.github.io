@@ -459,8 +459,10 @@
 
         var message1 = document.getElementById("message1");
         var message2 = document.getElementById("message2");
+        var message3 = document.getElementById("message3");
         message1.style.display = (message1.style.display === "none") ? "block" : "none";
         message2.style.display = (message2.style.display === "none") ? "block" : "none";
+        message3.style.display = (message3.style.display === "none") ? "block" : "none";
         
     }
 
@@ -477,11 +479,13 @@
 
         var message1 = document.getElementById("message1");
         var message2 = document.getElementById("message2");
+        var message3 = document.getElementById("message3");
 
-        if (!event.target.closest("#message1") && !event.target.closest("#message2")) {
+        if (!event.target.closest("#message1") && !event.target.closest("#message2") && !event.target.closest("#message3")) {
 
             message1.style.display = "none";
             message2.style.display = "none";
+            message3.style.display = "none";
 
         }
 
@@ -947,7 +951,9 @@
     const cssToggle = document.getElementById('css-toggle');
     const stylesheet = document.getElementById('stylesheet');
 
-    cssToggle.addEventListener('click', () => {
+    cssToggle.addEventListener('click', toggleTheme);
+
+    function toggleTheme() {
 
         const currentHref = stylesheet.getAttribute('href');
         const newHref = currentHref === 'EN_DarkStyle.css' ? 'EN_LightStyle.css' : 'EN_DarkStyle.css';
@@ -960,6 +966,25 @@
             cssToggle.classList.remove('fa-moon');
             cssToggle.classList.add('fa-sun');
         }
+
+    }
+
+/* Option Buttons */
+
+    document.querySelectorAll('.option').forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            const action = button.getAttribute('data-action');
+            if (action === 'toggleTheme') {
+                toggleTheme();
+            } else if (action === 'toggleLanguage') {
+                document.querySelector('.language-switcher a').click();
+            } else if (action === 'contactSection') {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }
+            
+        });
 
     });
 
