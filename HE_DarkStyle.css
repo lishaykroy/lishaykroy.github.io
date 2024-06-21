@@ -1364,7 +1364,7 @@ display:block;
 
 .toast {
     visibility: hidden;
-    min-width: 250px;
+    min-width: 300px;
     background: linear-gradient(90deg , #4f1a60 0% , #232631 40%);
     color: #fff;
     border-radius: 10px;
