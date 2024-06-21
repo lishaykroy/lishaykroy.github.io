@@ -246,6 +246,24 @@
 
     const cursor = document.querySelector('.cursor');
 
+    var timeout;
+
+    document.addEventListener("mousemove", (e) => {
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(() => {
+            cursor.style.display = "none";
+        }, 1000);
+        
+    });
+
+    document.addEventListener("mouseout", () => {
+
+        cursor.style.display = "none";
+
+    });
+
     function handleMouseMove(e) {
 
         cursor.style.top = e.clientY + "px";
@@ -443,13 +461,14 @@
         var message2 = document.getElementById("message2");
         message1.style.display = (message1.style.display === "none") ? "block" : "none";
         message2.style.display = (message2.style.display === "none") ? "block" : "none";
-
+        
     }
 
     document.getElementById("infoBtn").addEventListener("click", function(event) {
 
         console.log("Button clicked");
         toggleMessages();
+        document.getElementById("badge").style.display = "none";
         event.stopPropagation();
 
     });
@@ -473,7 +492,7 @@
     document.addEventListener("DOMContentLoaded", function() {
 
         toggleMessages();
-
+        
     });
 
  /* Skills Swiper */   
