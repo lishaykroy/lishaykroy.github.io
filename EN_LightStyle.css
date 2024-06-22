@@ -1535,13 +1535,13 @@ span {
     #plus-icon {
         display: block;
         position: absolute;
-        left: 37%;
+        left: 41%;
     }
 
     .actions {
         position: absolute;
         top: -7%;
-        left: 42%;
+        left: 46%;
         width: 20%;
         padding: 1rem 3%;
         background: var(--bg-color);
