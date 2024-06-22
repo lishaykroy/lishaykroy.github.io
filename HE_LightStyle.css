@@ -1556,13 +1556,13 @@ span {
     #plus-icon {
         display: block;
         position: absolute;
-        left: 30%;
+        left: 37%;
     }
 
     .actions {
         position: absolute;
         top: -7%;
-        left: 35%;
+        left: 42%;
         width: 20%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -1660,12 +1660,11 @@ span {
         position: absolute;
         top: 100%;
         right: 0;
-        width: 20%;
+        width: 30%;
         background: var(--bg-color);
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
-        padding: 1%;
     }
 
     nav.active {
@@ -1676,7 +1675,7 @@ span {
         display: block;
         font-size: 2rem;
         text-align: center;
-        margin: 3rem;
+        margin: 3rem 1rem;
     }
 
     .home {
