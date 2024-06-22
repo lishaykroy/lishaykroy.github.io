@@ -1540,8 +1540,8 @@ span {
 
     .actions {
         position: absolute;
-        top: -7%;
-        left: 46%;
+        top: -4%;
+        left: 48%;
         width: 20%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -1613,10 +1613,6 @@ span {
     .card-content button {
         font-size: 12px;
         padding: 3px;
-    }
-
-    .filter-buttons {
-        display: none;
     }
     
     .image img {

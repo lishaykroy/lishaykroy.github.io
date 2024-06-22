@@ -159,7 +159,6 @@ section {
     display: none;
     font-size: 1.5rem;
     position: absolute;
-    left: 0;
     border: 2px solid var(--main-color);
     border-radius: .8rem;
     padding: 10px;
@@ -178,7 +177,6 @@ section {
     background: var(--bg-color);
     font-size: 1.5rem;
     position: absolute;
-    left: 0;
     border: 2px solid var(--main-color);
     border-radius: .8rem;
     padding: 10px;
@@ -187,16 +185,11 @@ section {
     text-align: right;
 }
 
-#message2:hover {
-    background: var(--snd-bf-color);
-}
-
 #message3 {
     display: none;
     background: var(--bg-color);
     font-size: 1.5rem;
     position: absolute;
-    left: 0;
     border: 2px solid var(--main-color);
     border-radius: .8rem;
     padding: 10px;
@@ -206,6 +199,10 @@ section {
 }
 
 #message3:hover {
+    background: var(--snd-bf-color);
+}
+
+#message2:hover {
     background: var(--snd-bf-color);
 }
 
@@ -537,7 +534,7 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
-    text-align: left;
+    text-align: right;
 }
 
 .about .up-icon {
@@ -1557,13 +1554,13 @@ display:block;
     #plus-icon {
         display: block;
         position: absolute;
-        left: 37%;
+        left: 33%;
     }
 
     .actions {
         position: absolute;
         top: -7%;
-        left: 42%;
+        left: 38%;
         width: 20%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -1637,10 +1634,6 @@ display:block;
         padding: 3px;
     }
 
-    .filter-buttons {
-        display: none;
-    }
-    
     .image img {
         width: 30px;
         height: 30px;

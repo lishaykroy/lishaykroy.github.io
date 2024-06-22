@@ -537,7 +537,7 @@ span {
 .about-content p {
     font-size: 1.6rem;
     margin: 2rem 0 3rem;
-    text-align: left;
+    text-align: right;
 }
 
 .about .up-icon {
@@ -1558,13 +1558,13 @@ span {
     #plus-icon {
         display: block;
         position: absolute;
-        left: 37%;
+        left: 33%;
     }
 
     .actions {
         position: absolute;
         top: -7%;
-        left: 42%;
+        left: 38%;
         width: 20%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -1638,10 +1638,6 @@ span {
         padding: 3px;
     }
 
-    .filter-buttons {
-        display: none;
-    }
-    
     .image img {
         width: 30px;
         height: 30px;

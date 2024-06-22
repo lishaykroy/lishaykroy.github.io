@@ -17,10 +17,17 @@
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
                <!-- End -->
+
+               <!-- Flaticon-->
+
+                    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+                    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.3.0/uicons-solid-straight/css/uicons-solid-straight.css'>
+                     
+               <!-- End -->
                 
                <!-- Main CSS -->
 
-                    <link rel="stylesheet" href="HE_Thanks_CSS.css">
+                    <link id="stylesheet" rel="stylesheet" href="HE_Thanks_CSS.css">
 
                <!-- End -->
                 
@@ -30,7 +37,7 @@
                     <title>לישי קרויטורו</title>
           
                <!-- End -->
-                
+
           </head>
 
           <body>
@@ -147,14 +154,79 @@
                          </div>
                          
                     </div>
-               
-               <!-- End -->
-                
+
+                <!-- End -->
+                 
                <!-- Header -->
 
                     <header class="header">
 
-                         <a href="#" class="logo">לישי <span>קרויטורו</span></a>
+                         <div class="actions">
+
+                              <!-- Info Button -->
+
+                                   <div id="infoContainer">
+
+                                        <button id="infoBtn">
+                                             
+                                             <i class="fa-solid fa-circle-info"></i>
+                                             <span class="tooltip">התראות</span>
+                                             <span class="badge" id="badge">2</span>
+                                        
+                                        </button>
+                                                  
+                                        <div id="message1" class="infoMessage hidden">
+
+                                             <p>ניתן כעת לשנות את צבעי ברירת המחדל מתצוגה בסגנון כהה לתצוגה בסגנון בהיר </p>
+                                             <button class="option" data-action="toggleTheme">נסה כעת</button>
+
+                                        </div>
+
+                                        <div id="message2" class="infoMessage hidden">
+
+                                             <p>ניתן כעת לשנות את שפת ברירת המחדל מאנגלית לעברית</p>                            
+                                             <button class="option" data-action="toggleLanguage">שנה שפה</button>
+
+                                        </div>
+
+                                   </div>
+
+                              <!-- End -->
+                              
+                              <!-- Dark & Light Mode Switcher -->
+
+                                   <div class="mode-switcher">
+
+                                        <i class="fa-solid fa-moon" id="css-toggle"></i>
+                                        <span class="tooltip">מראה</span>
+
+                                   </div>
+
+                              <!-- End -->
+                              
+                              <!-- Language Switcher -->
+
+                                   <div class="language-switcher">
+
+                                        <a href="EN_Thanks.html" aria-label="Link To English Thank You Page">
+                                             
+                                             <i class="fi fi-rr-scroll-torah" id="flag-toggle"></i>
+                                             <span class="tooltip">שפה</span>
+                                        
+                                        </a>
+                              
+                                   </div>
+
+                              <!-- End -->
+
+                         </div>
+                              
+                              <!-- Logo -->
+
+                                   <a href="#" class="logo">לישי <span>קרויטורו</span></a>
+                                   <i class="fa-solid fa-plus" id="plus-icon"></i>
+
+                              <!-- End -->
 
                     </header>
 
@@ -172,7 +244,7 @@
                               <a href="HE_Index.html" class="btn">חזור אחורה</a>
 
                               <div class="social-media">
-
+                                   
                                    <a href="https://www.facebook.com/profile.php?id=100001251755628" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                                    <a href="https://www.linkedin.com/in/lishay-kroytoro/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                                    <a href="https://api.whatsapp.com/send/?phone=972503441587&text&type=phone_number&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
