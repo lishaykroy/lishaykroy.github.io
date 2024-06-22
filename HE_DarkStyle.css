@@ -1121,19 +1121,23 @@ display:block;
 }
 
 .contact form .input-box:nth-of-type(1) input:nth-of-type(1) + .label {
-    left: 39%;
+    left: 33%;
 }
 
 .contact form .input-box:nth-of-type(1) input:nth-of-type(2) + .label {
-    left: 91%;
+    left: 88%;
+}
+
+.contact form .input-box:nth-of-type(2) input:nth-of-type(1) + .label {
+    left: 35%;
 }
 
 .contact form .input-box:nth-of-type(2) input:nth-of-type(2) + .label {
-    left: 91%;
+    left: 88%;
 }
 
 .contact form .input-box textarea + .label {
-    left: 91%;
+    left: 88%;
 }
 
 .contact .input-box input:hover, .contact .input-box input:focus , 
