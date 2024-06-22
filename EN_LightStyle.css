@@ -1554,13 +1554,13 @@ span {
     }
 
     #message1 {
-        width: 350px;
+        width: 240px;
         top: calc(100% + 10px);
     }
     
     #message2 {
-        width: 350px;
-        top: calc(100% + 88px);
+        width: 240px;
+        top: calc(100% + 104px);
     }
 
     #message3 {

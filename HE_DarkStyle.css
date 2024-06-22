@@ -1574,13 +1574,13 @@ display:block;
     }
 
     #message1 {
-        width: 480px;
+        width: 200px;
         top: calc(100% + 10px);
     }
     
     #message2 {
-        width: 480px;
-        top: calc(100% + 50px);
+        width: 200px;
+        top: calc(100% + 85px);
     }
 
     #message3 {
