@@ -116,6 +116,14 @@ section {
         display: none;
     }
 
+/* Plus Icon */
+
+    #plus-icon {
+        font-size: 3.6rem;
+        color: var(--main-color);
+        display: none;
+    }
+
 /* Move Down To The Last Section Button */
 
     .end-icon {
@@ -1523,17 +1531,40 @@ span {
     html{
         font-size: 55%;
     }
-
-    .language-switcher {
-        display: none;
+    
+    #plus-icon {
+        display: block;
+        position: absolute;
+        left: 30%;
     }
 
-    .mode-switcher {
+    .actions {
+        position: absolute;
+        top: -7%;
+        left: 35%;
+        width: 20%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
         display: none;
+        flex-direction: column;
     }
 
-    #infoContainer {
-        display: none;
+    .actions.active {
+        display: flex;
+    }
+
+    #message1 {
+        width: 350px;
+        top: calc(100% + 10px);
+    }
+    
+    #message2 {
+        width: 350px;
+        top: calc(100% + 88px);
+    }
+
+    #message3 {
+        visibility: hidden;
     }
 }
 
@@ -1607,13 +1638,13 @@ span {
     nav {
         position: absolute;
         top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
+        right: 0;
+        width: 20%;
         background: var(--bg-color);
         border-top: .1rem solid rgba(0, 0, 0, .2);
         box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
         display: none;
+        padding: 1%;
     }
 
     nav.active {
@@ -1623,8 +1654,8 @@ span {
     nav a {
         display: block;
         font-size: 2rem;
-        margin: 3rem 0;
         text-align: center;
+        margin: 3rem;
     }
 
     .home {

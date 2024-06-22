@@ -456,50 +456,62 @@
 
 /* Info Button */
 
-    function toggleMessages() {
+function toggleMessages() {
 
-        var message1 = document.getElementById("message1");
-        var message2 = document.getElementById("message2");
-        var message3 = document.getElementById("message3");
-        message1.style.display = (message1.style.display === "none") ? "block" : "none";
-        message2.style.display = (message2.style.display === "none") ? "block" : "none";
-        message3.style.display = (message3.style.display === "none") ? "block" : "none";
-        
+    var message1 = document.getElementById("message1");
+    var message2 = document.getElementById("message2");
+    var message3 = document.getElementById("message3");
+    message1.style.display = (message1.style.display === "none") ? "block" : "none";
+    message2.style.display = (message2.style.display === "none") ? "block" : "none";
+    message3.style.display = (message3.style.display === "none") ? "block" : "none";
+    
+}
+
+document.getElementById("infoBtn").addEventListener("click", function(event) {
+
+    console.log("Button clicked");
+    toggleMessages();
+    var badge = document.getElementById("badge");
+    
+    if (message3.style.visibility !== "hidden") {
+        badge.textContent = "3";
+    } else {
+        badge.textContent = "2";
+    }
+    
+    badge.style.display = "none";
+    event.stopPropagation();
+});
+
+function handleDocumentClick(event) {
+
+    var message1 = document.getElementById("message1");
+    var message2 = document.getElementById("message2");
+    var message3 = document.getElementById("message3");
+
+    if (!event.target.closest("#message1") && !event.target.closest("#message2") && !event.target.closest("#message3")) {
+
+        message1.style.display = "none";
+        message2.style.display = "none";
+        message3.style.display = "none";
+
     }
 
-    document.getElementById("infoBtn").addEventListener("click", function(event) {
+}
 
-        console.log("Button clicked");
-        toggleMessages();
-        document.getElementById("badge").style.display = "none";
-        event.stopPropagation();
+document.addEventListener("click", handleDocumentClick);
 
-    });
+document.addEventListener("DOMContentLoaded", function() {
 
-    function handleDocumentClick(event) {
-
-        var message1 = document.getElementById("message1");
-        var message2 = document.getElementById("message2");
-        var message3 = document.getElementById("message3");
-
-        if (!event.target.closest("#message1") && !event.target.closest("#message2") && !event.target.closest("#message3")) {
-
-            message1.style.display = "none";
-            message2.style.display = "none";
-            message3.style.display = "none";
-
-        }
-
+    toggleMessages();
+    var badge = document.getElementById("badge");
+    var message3 = document.getElementById("message3");
+    
+    if (window.innerWidth <= 1200) {
+        badge.textContent = "2";
     }
-
-    document.addEventListener("click", handleDocumentClick);
-
-    document.addEventListener("DOMContentLoaded", function() {
-
-        toggleMessages();
-        
-    });
-
+    
+});
 
 /* Skills Swiper */   
 
@@ -1236,5 +1248,39 @@
             initTextTyping();
             
         };
+
+    });
+
+/* Plus Menu For Phones */
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        let plusIcon = document.querySelector('#plus-icon');
+        let actions = document.querySelector('.actions');
+        let infoContainer = document.querySelector('#infoContainer');
+        let modeSwitcher = document.querySelector('.mode-switcher');
+        let languageSwitcher = document.querySelector('.language-switcher');
+
+        /* Toggle Icon */
+
+            plusIcon.onclick = () => {
+
+                    plusIcon.classList.toggle('fa-xmark');
+                    actions.classList.toggle('active');
+
+                }
+
+        /* Hide the menu and remove toggle icon when a menu item is clicked */
+
+            [infoContainer, modeSwitcher, languageSwitcher].forEach(element => {
+
+                element.addEventListener('click', () => {
+
+                    menuIcon.classList.remove('fa-xmark');
+                    actions.classList.remove('active');
+
+                });
+
+            });
 
     });

@@ -470,9 +470,16 @@
 
         console.log("Button clicked");
         toggleMessages();
-        document.getElementById("badge").style.display = "none";
+        var badge = document.getElementById("badge");
+        
+        if (message3.style.visibility !== "hidden") {
+            badge.textContent = "3";
+        } else {
+            badge.textContent = "2";
+        }
+        
+        badge.style.display = "none";
         event.stopPropagation();
-
     });
 
     function handleDocumentClick(event) {
@@ -496,9 +503,15 @@
     document.addEventListener("DOMContentLoaded", function() {
 
         toggleMessages();
+        var badge = document.getElementById("badge");
+        var message3 = document.getElementById("message3");
+        
+        if (window.innerWidth <= 1200) {
+            badge.textContent = "2";
+        }
         
     });
-
+    
  /* Skills Swiper */   
     
     var swipers = document.querySelectorAll(".mySwiper");
@@ -1254,5 +1267,39 @@
             initTextTyping();
             
         };
+
+    });
+
+/* Plus Menu For Phones */
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+        let plusIcon = document.querySelector('#plus-icon');
+        let actions = document.querySelector('.actions');
+        let infoContainer = document.querySelector('#infoContainer');
+        let modeSwitcher = document.querySelector('.mode-switcher');
+        let languageSwitcher = document.querySelector('.language-switcher');
+
+        /* Toggle Icon */
+
+            plusIcon.onclick = () => {
+
+                    plusIcon.classList.toggle('fa-xmark');
+                    actions.classList.toggle('active');
+
+                }
+
+        /* Hide the menu and remove toggle icon when a menu item is clicked */
+
+            [infoContainer, modeSwitcher, languageSwitcher].forEach(element => {
+
+                element.addEventListener('click', () => {
+
+                    menuIcon.classList.remove('fa-xmark');
+                    actions.classList.remove('active');
+
+                });
+
+            });
 
     });
