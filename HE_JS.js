@@ -456,62 +456,62 @@
 
 /* Info Button */
 
-function toggleMessages() {
+    function toggleMessages() {
 
-    var message1 = document.getElementById("message1");
-    var message2 = document.getElementById("message2");
-    var message3 = document.getElementById("message3");
-    message1.style.display = (message1.style.display === "none") ? "block" : "none";
-    message2.style.display = (message2.style.display === "none") ? "block" : "none";
-    message3.style.display = (message3.style.display === "none") ? "block" : "none";
-    
-}
-
-document.getElementById("infoBtn").addEventListener("click", function(event) {
-
-    console.log("Button clicked");
-    toggleMessages();
-    var badge = document.getElementById("badge");
-    
-    if (message3.style.visibility !== "hidden") {
-        badge.textContent = "3";
-    } else {
-        badge.textContent = "2";
-    }
-    
-    badge.style.display = "none";
-    event.stopPropagation();
-});
-
-function handleDocumentClick(event) {
-
-    var message1 = document.getElementById("message1");
-    var message2 = document.getElementById("message2");
-    var message3 = document.getElementById("message3");
-
-    if (!event.target.closest("#message1") && !event.target.closest("#message2") && !event.target.closest("#message3")) {
-
-        message1.style.display = "none";
-        message2.style.display = "none";
-        message3.style.display = "none";
-
+        var message1 = document.getElementById("message1");
+        var message2 = document.getElementById("message2");
+        var message3 = document.getElementById("message3");
+        message1.style.display = (message1.style.display === "none") ? "block" : "none";
+        message2.style.display = (message2.style.display === "none") ? "block" : "none";
+        message3.style.display = (message3.style.display === "none") ? "block" : "none";
+        
     }
 
-}
+    document.getElementById("infoBtn").addEventListener("click", function(event) {
 
-document.addEventListener("click", handleDocumentClick);
+        console.log("Button clicked");
+        toggleMessages();
+        var badge = document.getElementById("badge");
+        
+        if (message3.style.visibility !== "hidden") {
+            badge.textContent = "3";
+        } else {
+            badge.textContent = "2";
+        }
+        
+        badge.style.display = "none";
+        event.stopPropagation();
+    });
 
-document.addEventListener("DOMContentLoaded", function() {
+    function handleDocumentClick(event) {
 
-    toggleMessages();
-    var badge = document.getElementById("badge");
-    var message3 = document.getElementById("message3");
-    
-    if (window.innerWidth <= 1200) {
-        badge.textContent = "2";
+        var message1 = document.getElementById("message1");
+        var message2 = document.getElementById("message2");
+        var message3 = document.getElementById("message3");
+
+        if (!event.target.closest("#message1") && !event.target.closest("#message2") && !event.target.closest("#message3")) {
+
+            message1.style.display = "none";
+            message2.style.display = "none";
+            message3.style.display = "none";
+
+        }
+
     }
-    
-});
+
+    document.addEventListener("click", handleDocumentClick);
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        toggleMessages();
+        var badge = document.getElementById("badge");
+        var message3 = document.getElementById("message3");
+        
+        if (window.innerWidth <= 1200) {
+            badge.textContent = "2";
+        }
+        
+    });
 
 /* Skills Swiper */   
 
