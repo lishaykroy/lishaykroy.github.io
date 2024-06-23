@@ -599,12 +599,12 @@ opacity: 1;
     }
 
     #message1 {
-        width: 240px;
+        width: 200px;
         top: calc(100% + 10px);
     }
     
     #message2 {
-        width: 240px;
+        width: 200px;
         top: calc(100% + 104px);
     }
 }
