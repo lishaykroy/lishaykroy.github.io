@@ -664,5 +664,9 @@ span {
         left: 50%;
         transform: translateX(-50%);
     }
+
+    #context-menu {
+        display: none !important;
+    }
 }
 

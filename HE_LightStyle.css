@@ -1740,6 +1740,10 @@ span {
     #progressbar {
         width: 5px;
     }
+
+    #context-menu {
+        display: none !important;
+    }
 }
 
 @media (max-width: 450px) {
