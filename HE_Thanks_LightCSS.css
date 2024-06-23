@@ -352,6 +352,7 @@ span {
 
 .home-img img {
     width: 25vw;
+    height: 50vh;
     animation: floatImage 4s ease-in-out infinite;
     border-radius: 3rem;
     box-shadow: none;
@@ -375,6 +376,20 @@ span {
     margin: 2rem 0 3rem;
 }
 
+/* Social Media */
+
+.social-media {
+    display: flex;
+    justify-content: right;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-media .Facebook, .social-media .Linkedin, .social-media .Whatsapp, .social-media .Instagram, .social-media .Github {
+    position: relative;
+}
+
 .social-media a {
     display: inline-flex;
     justify-content: center;
@@ -386,7 +401,7 @@ span {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 1.5rem 0;
     transition: .5s ease;
 }
 
@@ -396,11 +411,120 @@ span {
     box-shadow: 0 0 1rem var(--main-color);
 }
 
-.home .down-icon {
+.social-media .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
     position: absolute;
+    top: 85%; 
     left: 50%;
     transform: translateX(-50%);
-    bottom: 2rem;
+    background-color: var(--main-color);
+    color: var(--snd-bf-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    z-index: 900;
+}
+
+.social-media div:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Background Music */
+
+.background-music {
+    position: relative;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    background: transparent;
+}
+
+.background-music .tooltip {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    top: 100%; 
+    right: 19%;
+    background-color: var(--main-color);
+    color: var(--snd-bf-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    white-space: nowrap;
+    z-index: 900;
+}
+
+.play:hover .tooltip, .stop:hover .tooltip, .backward:hover .tooltip, .forward:hover .tooltip, .mute:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.background-music i {
+    cursor: pointer;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin-left: 2rem;
+    transition: .5s ease;
+}
+
+.background-music i:hover {
+    background: var(--main-color);
+    color: var(--snd-bf-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.control-icons {
+    display: flex;
+}
+
+.control-icons.hidden {
+    display: none;
+}
+
+.time-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-display.hidden {
+    display: none;
+}
+
+.time-display span {
+    font-size: 16px;
+    color: var(--main-color);
+}
+
+.music-line {
+    width: 70%;
+    height: 8px;
+    background-color: var(--main-color);
+    margin-top: 1.5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    border-radius: 5px;
+}
+
+.progress-filled {
+    height: 100%;
+    background-color: var(--text-color);
+    width: 0%;
+    transition: width 0.1s ease;
 }
 
 /* Button One */

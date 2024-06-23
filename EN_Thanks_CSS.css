@@ -365,26 +365,155 @@ opacity: 1;
         margin: 2rem 5rem 3rem 0;
     }
 
-    .social-media a {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 4rem;
-        height: 4rem;
-        background: transparent;
-        border: .2rem solid var(--main-color);
-        border-radius: 50%;
-        font-size: 2rem;
-        color: var(--main-color);
-        margin: 3rem 1.5rem 3rem 0;
-        transition: .5s ease;
-    }
+    /* Social Media */
 
-    .social-media a:hover {
-        background: var(--main-color);
-        color: var(--snd-bf-color);
-        box-shadow: 0 0 1rem var(--main-color);
-    }
+        .social-media {
+            display: flex;
+            justify-content: left;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .social-media .Facebook, .social-media .Linkedin, .social-media .Whatsapp, .social-media .Instagram, .social-media .Github {
+            position: relative;
+        }
+
+        .social-media a {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background: transparent;
+            border: .2rem solid var(--main-color);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--main-color);
+            margin: 1.5rem 0;
+            transition: .5s ease;
+        }
+
+        .social-media a:hover {
+            background: var(--main-color);
+            color: var(--snd-bf-color);
+            box-shadow: 0 0 1rem var(--main-color);
+        }
+
+        .social-media .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s;
+            position: absolute;
+            top: 85%; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--main-color);
+            color: var(--snd-bf-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            z-index: 900;
+        }
+
+        .social-media div:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+    /* Background Music */
+
+        .background-music {
+            position: relative;
+            margin-top: 2rem;
+            display: flex;
+            flex-direction: row;
+            align-items: left;
+            background: transparent;
+        }
+
+        .background-music .tooltip {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s;
+            position: absolute;
+            top: 100%; 
+            left: 12%;
+            background-color: var(--main-color);
+            color: var(--snd-bf-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            white-space: nowrap;
+            z-index: 900;
+        }
+
+        .play:hover .tooltip, .stop:hover .tooltip, .backward:hover .tooltip, .forward:hover .tooltip, .mute:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .background-music i {
+            cursor: pointer;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 4rem;
+            height: 4rem;
+            background: transparent;
+            border: .2rem solid var(--main-color);
+            border-radius: 50%;
+            font-size: 2rem;
+            color: var(--main-color);
+            margin-right: 2rem;
+            transition: .5s ease;
+        }
+
+        .background-music i:hover {
+            background: var(--main-color);
+            color: var(--snd-bf-color);
+            box-shadow: 0 0 1rem var(--main-color);
+        }
+
+        .control-icons {
+            display: flex;
+        }
+        
+        .control-icons.hidden {
+            display: none;
+        }
+
+        .time-display {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .time-display.hidden {
+            display: none;
+        }
+
+        .time-display span {
+            font-size: 16px;
+            color: var(--text-color);
+        }
+
+        .music-line {
+            width: 70%;
+            height: 8px;
+            background-color: var(--snd-bf-color);
+            margin-top: 1.5rem;
+            margin-right: 2rem;
+            border-radius: 5px;
+        }
+        
+        .progress-filled {
+            height: 100%;
+            background: linear-gradient(90deg , #fff, #d9a9e9 , #C243EE);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
 
 /* Button One */
 

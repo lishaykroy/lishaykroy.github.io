@@ -244,14 +244,104 @@
                               <a href="HE_Index.html" class="btn">חזור אחורה</a>
 
                               <div class="social-media">
-                                   
-                                   <a href="https://www.facebook.com/profile.php?id=100001251755628" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                                   <a href="https://www.linkedin.com/in/lishay-kroytoro/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                                   <a href="https://api.whatsapp.com/send/?phone=972503441587&text&type=phone_number&app_absent=0" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                                   <a href="https://www.instagram.com/lishay_kroy/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                                   <a href="https://github.com/lishaykroy" aria-label="My Github's Link" target="_blank"><i class="fa-brands fa-github"></i></a>
 
-                              </div>
+                                   <div class="Facebook">
+       
+                                       <a href="https://www.facebook.com/profile.php?id=100001251755628" aria-label="My Facebook's Link" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                                       <span class="tooltip">פייסבוק</span>
+       
+                                   </div>
+       
+                                   <div class="Linkedin">
+       
+                                       <a href="https://www.linkedin.com/in/lishay-kroytoro/" aria-label="My Linkein's Link" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                                       <span class="tooltip">לינקדאין</span>
+       
+                                   </div>
+       
+                                   <div class="Whatsapp">
+       
+                                       <a href="https://api.whatsapp.com/send/?phone=972503441587&text&type=phone_number&app_absent=0" aria-label="My Whatsapp's Link" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                                       <span class="tooltip">וואצאפ</span>
+       
+                                   </div>
+       
+                                   <div class="Instagram">
+       
+                                       <a href="https://www.instagram.com/lishay_kroy/" aria-label="My Instagram's Link" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                                       <span class="tooltip">אינסטגרם</span>
+       
+                                   </div>
+       
+                                   <div class="Github">
+       
+                                       <a href="https://github.com/lishaykroy" aria-label="My Github's Link" target="_blank"><i class="fa-brands fa-github"></i></a>
+                                       <span class="tooltip">גיטהאב</span>
+       
+                                   </div>
+       
+                               </div>
+       
+                               <div class="background-music">
+       
+                                   <audio loop id="audioPlayer">
+                                       
+                                       <source src="Sounds/Background.mp3" type="audio/mp3">
+                                   
+                                   </audio>
+       
+                                   <div class="play">
+       
+                                       <i id="playIcon" class="fa-solid fa-play" onclick="playMusic()"></i>
+                                       <span class="tooltip">נגן מוזיקה</span>
+       
+                                   </div>
+       
+                                   <div id="controlIcons" class="control-icons hidden">
+       
+                                       <div class="stop">
+       
+                                           <i class="fa-solid fa-stop" onclick="stopMusic()"></i>
+                                           <span class="tooltip">עצור מוזיקה</span>
+       
+                                       </div>
+       
+                                       <div class="backward">
+                                           
+                                           <i class="fa-solid fa-forward" onclick="backwardMusic()"></i>
+                                           <span class="tooltip">אחורה 10 ש"</span>
+       
+                                       </div>
+       
+                                       <div class="forward">
+                                           
+                                           <i class="fa-solid fa-backward" onclick="forwardMusic()"></i>
+                                           <span class="tooltip">קדימה 10 ש"</span>
+       
+                                       </div>
+       
+                                       <div class="mute">
+       
+                                           <i id="muteIcon" class="fa-solid fa-volume-high" onclick="muteMusic()"></i>
+                                           <span class="tooltip">השתק מוזיקה</span>
+       
+                                       </div>
+       
+                                   </div>
+       
+                                   <div class="music-line">
+       
+                                       <div id="progressFilled" class="progress-filled"></div>
+       
+                                   </div>
+       
+                                   <div class="time-display hidden">
+       
+                                       <span id="currentTime">00:00</span> / <span id="duration">00:00</span>
+       
+                                   </div>
+       
+                               </div>
 
                          </div>
                          
