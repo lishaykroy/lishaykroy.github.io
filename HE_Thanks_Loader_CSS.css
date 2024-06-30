@@ -107,56 +107,56 @@ border-radius: 50%;
 
 /* Context Menu */
 
-#context-menu {
-  position: fixed;
-  z-index: 998;
-  width: 200px;
-  background: #1b1a1a;
-  transform: scale(0);
-  transform-origin: top left;
-  display: none;
-  border-radius: 2rem;
-}
+    #context-menu {
+        position: fixed;
+        z-index: 998;
+        width: 200px;
+        background: #1b1a1a;
+        transform: scale(0);
+        transform-origin: top left;
+        display: none;
+        border-radius: 2rem;
+    }
 
-#context-menu .item {
-  display: flex;
-  align-items: center; 
-  justify-content: flex-start;
-  padding: 8px 10px;
-  font-size: 15px;
-}
+    #context-menu .item {
+        display: flex;
+        align-items: center; 
+        justify-content: flex-start;
+        padding: 8px 10px;
+        font-size: 15px;
+    }
 
-#context-menu.active {
-  display: block;
-  transform: scale(1);
-  transition: transform 200ms ease-in-out;
-}
+    #context-menu.active {
+        display: block;
+        transform: scale(1);
+        transition: transform 200ms ease-in-out;
+    }
 
-#context-menu .item:hover {
-  background: var(--snd-bf-color);
-  border-radius: 2rem;
-}
+    #context-menu .item:hover {
+        background: var(--snd-bf-color);
+        border-radius: 2rem;
+    }
 
-#context-menu hr {
-  margin: 5px 0;  
-  border: none;
-  border-top: 1px solid #444; 
-}
+    #context-menu hr {
+        margin: 5px 0;  
+        border: none;
+        border-top: 1px solid #444; 
+    }
 
-#context-menu .item span {
-  color: var(--text-color);
-}
+    #context-menu .item span {
+        color: var(--text-color);
+    }
 
-#context-menu .item i {
-  margin-left: 10px;
-}
+    #context-menu .item i {
+        margin-left: 10px;
+    }
 
-#context-menu .shortcut {
-  font-size: 11px;  
-  margin-right: auto; 
-}
+    #context-menu .shortcut {
+        font-size: 11px;  
+        margin-right: auto; 
+    }
 
-#context-menu .item span.name {
-  margin-right: 10px;
-  color: var(--text-color);
-}
+    #context-menu .item span.name {
+        margin-right: 10px;
+        color: var(--text-color);
+    }

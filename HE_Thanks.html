@@ -4,6 +4,21 @@
 
           <head>
 
+               <!-- Google tag (gtag.js) -->
+             
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2RB2FE7PB"></script>
+
+                    <script>
+
+                         window.dataLayer = window.dataLayer || [];
+                         function gtag(){dataLayer.push(arguments);}
+                         gtag('js', new Date());
+                         gtag('config', 'G-Q2RB2FE7PB');
+                         
+                    </script>
+           
+               <!-- End -->
+
                <!-- General-->
 
                     <meta charset="UTF-8">
@@ -231,6 +246,40 @@
                     </header>
 
                <!-- End -->
+
+               <!-- Chat Bot-->
+
+                    <button id="chatbotButton"><i class="fas fa-comments"></i></button>
+                    <span id="exclamationMark">!</span>
+
+                    <div id="chatboxContainer">
+
+                         <div id="chatbox">
+
+                         <h2>העוזר האישי של לישי קרויטורו
+
+                         <span class="close-button" onclick="closeChatbox()">X</span>
+
+                         </h2>
+
+                         <div id="messages">
+
+                         <div class="message bot-message">
+                              
+                              <i class="fas fa-robot icon bot-icon"></i>
+                              <strong>בוט :</strong> שלום וברוך הבא לשיחה עם העוזר האישי של לישי קרויטורו !
+                         
+                         </div>
+
+                         </div>
+
+                         </div>
+
+                         <div id="questionButtons"></div>
+
+                    </div>
+
+               <!-- End -->
                 
                <!-- Home Page Design-->
 
@@ -238,9 +287,9 @@
 
                          <div class="home-content">
 
-                              <h1><span id="fullNameSpan">אורח יקר</span></h1>
+                              <h1><span id="fullNameSpan">אורח/ת יקר/ה</span></h1>
                               <h3>תודה שיצרת איתי קשר </h3>
-                              <p>אחזור אליך עם תשובתי בהקדם , בינתיים אתה מוזמן להמשיך לחקור אודותיי</p>
+                              <p>אחזור אליך עם תגובה בהקדם האפשרי , בינתיים אפשר להמשיך לחקור עלי ועל אודותיי בדף הקודם</p>
                               <a href="HE_Index.html" class="btn">חזור אחורה</a>
 
                               <div class="social-media">
@@ -294,6 +343,7 @@
        
                                        <i id="playIcon" class="fa-solid fa-play" onclick="playMusic()"></i>
                                        <span class="tooltip">נגן מוזיקה</span>
+                                       <div class="visualizer"></div>
        
                                    </div>
        
@@ -358,6 +408,20 @@
                     </section>
 
                <!-- End -->
+
+                <!-- Footer -->
+
+                <footer class="footer">
+
+                    <div class="footer-text">
+
+                        <p>&copy; לישי קרויטורו   |    כל הזכויות שמורות</p>
+
+                    </div>
+
+                </footer>
+
+            <!-- End -->
                 
                <!-- Main Script -->
           

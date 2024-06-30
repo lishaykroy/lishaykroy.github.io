@@ -3,17 +3,18 @@
     <html lang="he">
 
         <head>
-
-            
+         
             <!-- Google tag (gtag.js) -->
              
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2RB2FE7PB"></script>
-                <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
 
-                gtag('config', 'G-Q2RB2FE7PB');
+                <script>
+
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-Q2RB2FE7PB');
+                    
                 </script>
 
             <!-- End -->
@@ -88,8 +89,8 @@
 
                     <div class="toast-content">
 
-                        <h2>שלום וברכה !</h2>
-                        <p>מה המצב ?</p>
+                        <h2></h2>
+                        <p>מה שלומך היום ?</p>
 
                         <div class="countdown-bar">
                             
@@ -276,7 +277,7 @@
              
             <!-- Cursor -->
 
-                <div class="cursor"></div>
+                <div class="cursor"><span>גלול</span></div>
 
             <!-- End -->
              
@@ -460,12 +461,47 @@
                         <div class="end-icon">
 
                             <a href="#contact" aria-label="Link To Contact Section"><i class="fa-solid fa-angles-down"></i></a>
+                            <span class="tooltip">למטה</span>
 
                         </div>
 
                     <!-- End -->
                     
                 </header>
+
+            <!-- End -->
+
+            <!-- Chat Bot-->
+
+                    <button id="chatbotButton"><i class="fas fa-comments"></i></button>
+                    <span id="exclamationMark">!</span>
+
+                    <div id="chatboxContainer">
+
+                         <div id="chatbox">
+
+                         <h2>העוזר האישי של לישי קרויטורו
+
+                         <span class="close-button" onclick="closeChatbox()">X</span>
+
+                         </h2>
+
+                         <div id="messages">
+
+                         <div class="message bot-message">
+                              
+                              <i class="fas fa-robot icon bot-icon"></i>
+                              <strong>בוט :</strong> שלום וברוך הבא לשיחה עם העוזר האישי של לישי קרויטורו !
+                         
+                         </div>
+
+                         </div>
+
+                         </div>
+
+                         <div id="questionButtons"></div>
+
+                    </div>
 
             <!-- End -->
              
@@ -534,6 +570,7 @@
 
                                 <i id="playIcon" class="fa-solid fa-play" onclick="playMusic()"></i>
                                 <span class="tooltip">נגן מוזיקה</span>
+                                <div class="visualizer"></div>
 
                             </div>
 
@@ -598,6 +635,7 @@
                     <div class="down-icon">
 
                         <a href="#about" aria-label="Link To About Section"><i class="fa-solid fa-angle-down"></i></a>
+                        <span class="tooltip">למטה</span>
 
                     </div>
                     
@@ -727,12 +765,14 @@
                         <div class="up-icon">
 
                             <a href="#home" aria-label="Link To Home Section"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">למעלה</span>
 
                         </div>
 
                         <div class="down-icon">
 
                             <a href="#skills" aria-label="Link To Skills Section"><i class="fa-solid fa-angle-down"></i></a>
+                            <span class="tooltip">למטה</span>
                             
                         </div>
 
@@ -799,7 +839,7 @@
 
                             <div class="no-results">
 
-                                <h2>לא נמצאו התאמות</h2>
+                                <h2>! לא נמצאו התאמות</h2>
 
                             </div>
 
@@ -9079,12 +9119,14 @@
                         <div class="up-icon">
 
                             <a href="#about" aria-label="Link To About Section"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">למעלה</span>
 
                         </div>
 
                         <div class="down-icon">
 
                             <a href="#services" aria-label="Link To Services Section"><i class="fa-solid fa-angle-down"></i></a>
+                            <span class="tooltip">למטה</span>
                             
                         </div>
 
@@ -9161,12 +9203,14 @@
                         <div class="up-icon">
 
                             <a href="#skills" aria-label="Link To Skills Section"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">למעלה</span>
 
                         </div>
 
                         <div class="down-icon">
 
                             <a href="#contact" aria-label="Link To Contact Section"><i class="fa-solid fa-angle-down"></i></a>
+                            <span class="tooltip">למטה</span>
                             
                         </div>
 
@@ -9220,6 +9264,7 @@
                         <div class="up-icon">
 
                             <a href="#services"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">למעלה</span>
 
                         </div>
                         
@@ -9242,6 +9287,7 @@
                     <div class="footer-icon">
 
                         <a href="#home" aria-label="Link To Home Section"><i class="fa-solid fa-angles-up"></i></a>
+                        <span class="tooltip">למעלה</span>
 
                     </div>
 

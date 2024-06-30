@@ -7,12 +7,14 @@
             <!-- Google tag (gtag.js) -->
              
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2RB2FE7PB"></script>
-                <script>
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
 
-                gtag('config', 'G-Q2RB2FE7PB');
+                <script>
+
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                    gtag('config', 'G-Q2RB2FE7PB');
+                    
                 </script>
 
             <!-- End -->
@@ -87,7 +89,7 @@
 
                     <div class="toast-content">
 
-                        <h2>Hello There !</h2>
+                        <h2></h2>
                         <p>How are you doing today ?</p>
 
                         <div class="countdown-bar">
@@ -275,7 +277,7 @@
              
             <!-- Cursor -->
 
-                <div class="cursor"></div>
+                <div class="cursor"><span>Scroll</span></div>
 
             <!-- End -->
              
@@ -459,12 +461,47 @@
                         <div class="end-icon">
 
                             <a href="#contact" aria-label="Link To Contact Section"><i class="fa-solid fa-angles-down"></i></a>
+                            <span class="tooltip">Down</span>
 
                         </div>
 
                     <!-- End -->
 
                 </header>
+
+            <!-- End -->
+
+            <!-- Chat Bot-->
+
+                <button id="chatbotButton"><i class="fas fa-comments"></i></button>
+                <span id="exclamationMark">!</span>
+
+                <div id="chatboxContainer">
+
+                    <div id="chatbox">
+
+                      <h2>Lishay Kroytoro's Assistant
+
+                        <span class="close-button" onclick="closeChatbox()">X</span>
+
+                      </h2>
+
+                      <div id="messages">
+
+                        <div class="message bot-message">
+                            
+                            <i class="fas fa-robot icon bot-icon"></i>
+                            <strong>Bot :</strong> Hello and welcome to the chat with me , I'm Lishay Kroytoro's assistant !
+                        
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                    <div id="questionButtons"></div>
+
+                </div>
 
             <!-- End -->
 
@@ -533,6 +570,7 @@
 
                                 <i id="playIcon" class="fa-solid fa-play" onclick="playMusic()"></i>
                                 <span class="tooltip">Play Music</span>
+                                <div class="visualizer"></div>
 
                             </div>
 
@@ -597,6 +635,7 @@
                     <div class="down-icon">
 
                         <a href="#about" aria-label="Link To About Section"><i class="fa-solid fa-angle-down"></i></a>
+                        <span class="tooltip">Down</span>
 
                     </div>
                     
@@ -726,12 +765,14 @@
                         <div class="up-icon">
 
                             <a href="#home" aria-label="Link To Home Section"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">Up</span>
 
                         </div>
 
                         <div class="down-icon">
 
                             <a href="#skills" aria-label="Link To Skills Section"><i class="fa-solid fa-angle-down"></i></a>
+                            <span class="tooltip">Down</span>
                             
                         </div>
 
@@ -9078,12 +9119,14 @@
                         <div class="up-icon">
 
                             <a href="#about" aria-label="Link To About Section"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">Up</span>
 
                         </div>
 
                         <div class="down-icon">
 
                             <a href="#services" aria-label="Link To Services Section"><i class="fa-solid fa-angle-down"></i></a>
+                            <span class="tooltip">Down</span>
                             
                         </div>
 
@@ -9160,12 +9203,14 @@
                         <div class="up-icon">
 
                             <a href="#skills" aria-label="Link To Skills Section"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">Up</span>
 
                         </div>
 
                         <div class="down-icon">
 
                             <a href="#contact" aria-label="Link To Contact Section"><i class="fa-solid fa-angle-down"></i></a>
+                            <span class="tooltip">Down</span>
                             
                         </div>
 
@@ -9218,6 +9263,7 @@
                         <div class="up-icon">
 
                             <a href="#services"><i class="fa-solid fa-angle-up"></i></a>
+                            <span class="tooltip">Up</span>
 
                         </div>
                         
@@ -9240,6 +9286,7 @@
                     <div class="footer-icon">
 
                         <a href="#home" aria-label="Link To Home Section"><i class="fa-solid fa-angles-up"></i></a>
+                        <span class="tooltip">Up</span>
 
                     </div>
 

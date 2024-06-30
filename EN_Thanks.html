@@ -4,6 +4,21 @@
 
           <head>
 
+               <!-- Google tag (gtag.js) -->
+             
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q2RB2FE7PB"></script>
+
+                    <script>
+
+                         window.dataLayer = window.dataLayer || [];
+                         function gtag(){dataLayer.push(arguments);}
+                         gtag('js', new Date());
+                         gtag('config', 'G-Q2RB2FE7PB');
+                         
+                    </script>
+           
+               <!-- End -->
+                        
                <!-- General-->
 
                     <meta charset="UTF-8">
@@ -231,6 +246,40 @@
                     </header>
 
                <!-- End -->
+
+               <!-- Chat Bot-->
+
+                    <button id="chatbotButton"><i class="fas fa-comments"></i></button>
+                    <span id="exclamationMark">!</span>
+
+                    <div id="chatboxContainer">
+
+                         <div id="chatbox">
+
+                         <h2>Lishay Kroytoro's Assistant
+
+                         <span class="close-button" onclick="closeChatbox()">X</span>
+
+                         </h2>
+
+                         <div id="messages">
+
+                         <div class="message bot-message">
+                              
+                              <i class="fas fa-robot icon bot-icon"></i>
+                              <strong>Bot :</strong> Hello and welcome to the chat with me , I'm Lishay Kroytoro's assistant !
+                         
+                         </div>
+
+                         </div>
+
+                         </div>
+
+                         <div id="questionButtons"></div>
+
+                    </div>
+
+               <!-- End -->
                 
                <!-- Home Page Design-->
 
@@ -294,6 +343,7 @@
        
                                        <i id="playIcon" class="fa-solid fa-play" onclick="playMusic()"></i>
                                        <span class="tooltip">Play Music</span>
+                                       <div class="visualizer"></div>
        
                                    </div>
        
@@ -358,6 +408,20 @@
                     </section>
 
                <!-- End -->
+
+               <!-- Footer -->
+
+               <footer class="footer">
+
+                    <div class="footer-text">
+
+                        <p>&copy; Lishay Kroytoro | All Rights Reserved</p>
+
+                    </div>
+
+                </footer>
+
+            <!-- End -->
                 
                <!-- Main Script -->
           
