@@ -1017,7 +1017,7 @@ opacity: 1;
         z-index: 1000;
       }
 
-      #chatbox {
+    #chatbox {
         height: calc(100% - 300px);
     }
 

@@ -412,6 +412,7 @@ section {
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    background-color: var(--snd-bf-color);
 }
 
 .home-content h3 {
@@ -516,7 +517,7 @@ span {
 
         .social-media a:hover {
             background: var(--main-color);
-            color: var(--snd-bf-color);
+            color: var(--bg-color);
             box-shadow: 0 0 1rem var(--main-color);
         }
 
@@ -529,7 +530,7 @@ span {
             left: 50%;
             transform: translateX(-50%);
             background-color: var(--main-color);
-            color: var(--snd-bf-color);
+            color: var(--bg-color);
             padding: 5px 10px;
             border-radius: 5px;
             font-size: 1.2rem;
@@ -591,7 +592,7 @@ span {
 
         .background-music i:hover {
             background: var(--main-color);
-            color: var(--snd-bf-color);
+            color: var(--bg-color);
             box-shadow: 0 0 1rem var(--main-color);
         }
 
@@ -621,7 +622,7 @@ span {
         .music-line {
             width: 70%;
             height: 8px;
-            background-color: var(--snd-bf-color);
+            background-color: var(--bg-color);
             margin-top: 1.5rem;
             margin-right: 2rem;
             border-radius: 5px;
@@ -680,7 +681,7 @@ span {
 
 .btn:hover {
     box-shadow: none;
-    background: var(--snd-bf-color);
+    background: var(--bg-color);
     color: var(--main-color);
     border:.2rem solid var(--main-color);
 }
@@ -688,7 +689,7 @@ span {
 /* Button Two */
 
 .btn.btn-outline {
-    background: var(--snd-bf-color);
+    background: var(--bg-color);
     border: .2rem solid var(--main-color);
     box-shadow: none;
     color: var(--main-color);
@@ -696,8 +697,120 @@ span {
 
 .btn.btn-outline:hover {
     background: var(--main-color);
-    color: var(--snd-bf-color);
+    color: var(--bg-color);
     box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* Awards Section */
+
+.awards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem; 
+    margin-top: 50px;
+}
+
+.awards h2 {
+    margin-bottom: 25px;
+}
+
+.awards h3 {
+    font-size: 2rem; 
+}
+
+.awards-content {
+    max-width: 1000px; 
+    text-align: center;
+    flex: 1;
+}
+
+.awards-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 6rem;
+    margin-top: 90px;
+}
+
+.award {
+    text-align: center;
+    position: relative;
+    padding: 40px;
+    border: 4px solid var(--text-color);
+    border-radius: 20px;
+    background-color: var(--snd-bf-color);
+    color: var(--text-color);
+    width: 400px;
+}
+
+.award:hover {
+    border: 5px solid var(--main-color);
+}
+
+.award i {
+    font-size: 6rem; 
+    margin-bottom: 30px; 
+    margin-top: 10px;
+    display: block;
+    color: var(--main-color);
+    padding: 20px;
+    border: 4px solid var(--bg-color);
+    border-radius: 20px;
+}
+
+.award:hover i {
+    color: var(--text-color);
+}
+
+.hexagon {
+    position: absolute;
+    width: 80px; 
+    height: 80px;
+    top: 10px;
+    left: 10px;
+    background-color: var(--bg-color);
+    clip-path: polygon(
+        50% 0%,
+        100% 25%,
+        100% 75%,
+        50% 100%,
+        0% 75%,
+        0% 25%
+    );
+    margin: auto;
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px; 
+}
+
+.hexagon .rank {
+    font-size: 3.5rem; 
+    font-weight: bold;
+    color: var(--main-color);
+}
+
+.award:hover .hexagon .rank {
+    color: var(--text-color);
+}
+
+.award1:hover {
+    transform: translateY(-70px) scale(1.05);
+}
+
+.award2:hover {
+    transform: translateY(-30px) scale(1.05);
+}
+
+.award3:hover {
+    transform: translateY(-10px) scale(1.05);
+}
+
+.awards .icon-container {
+    gap: 2rem;
 }
 
 /* About Section */
@@ -2229,7 +2342,7 @@ display:block;
         z-index: 1000;
       }
 
-      #chatbox {
+    #chatbox {
         height: calc(100% - 300px);
     }
 
@@ -2237,6 +2350,16 @@ display:block;
         bottom: 55px; 
         right: 20px;
         font-size: 28px;
+    }
+
+    .awards-container {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .award {
+        width: 100%;
+        max-width: 400px;
     }
 }
 

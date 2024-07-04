@@ -893,7 +893,7 @@ span {
     bottom: 75px; 
     right: 25px;
     font-size: 34px;
-    color: var(--bg-color);
+    color: var(--main-color);
     display: none; 
     z-index: 201; 
 }
@@ -1001,7 +1001,7 @@ span {
         z-index: 1000;
       }
 
-      #chatbox {
+    #chatbox {
         height: calc(100% - 300px);
     }
 
