@@ -456,7 +456,7 @@ swipers.forEach(swiper => {
 
     new Swiper(swiper, {
         slidesPerView: 3, 
-        spaceBetween: 20, 
+        spaceBetween: 10, 
         grabCursor: true,
         navigation: {
             nextEl: swiper.querySelector(".swiper-button-next"),
@@ -1318,14 +1318,12 @@ function playMusic() {
     var audioPlayer = document.getElementById('audioPlayer');
     var playIcon = document.getElementById('playIcon');
     var tooltip = document.querySelector('.play .tooltip');
-    var visualizer = document.querySelector('.visualizer');
 
     if (audioPlayer.paused) {
     audioPlayer.play();
     playIcon.classList.remove('fa-play');
     playIcon.classList.add('fa-pause');
     tooltip.textContent = 'Pause Music';
-    visualizer.classList.add('playing');
     toggleControlIcons(true);
     toggleTimeDisplay(true);
     } else {
@@ -1333,7 +1331,6 @@ function playMusic() {
     playIcon.classList.remove('fa-pause');
     playIcon.classList.add('fa-play');
     tooltip.textContent = 'Play Music';
-    visualizer.classList.remove('playing');
     toggleControlIcons(false);
     toggleTimeDisplay(false);
     }
@@ -1357,7 +1354,6 @@ function stopMusic() {
     var audioPlayer = document.getElementById('audioPlayer');
     var playIcon = document.getElementById('playIcon');
     var tooltip = document.querySelector('.play .tooltip');
-    var visualizer = document.querySelector('.visualizer');
 
     audioPlayer.pause();      
     audioPlayer.currentTime = 0; 
@@ -1365,7 +1361,6 @@ function stopMusic() {
     if (playIcon.classList.contains('fa-pause')) {
 
         playIcon.classList.remove('fa-pause');
-        visualizer.classList.remove('playing');
         playIcon.classList.add('fa-play');
         tooltip.textContent = 'Play Music';
         toggleControlIcons(false);
@@ -1519,6 +1514,17 @@ chatbotButton.onmousedown = function(event) {
         
     }
 
+    let clientX, clientY;
+
+    if (event.type === 'mousedown') {
+        clientX = event.clientX;
+        clientY = event.clientY;
+    } else if (event.type === 'touchstart') {
+        let touch = event.touches[0];
+        clientX = touch.clientX;
+        clientY = touch.clientY;
+    }
+
     let shiftX = event.clientX - chatbotButton.getBoundingClientRect().left;
     let shiftY = event.clientY - chatbotButton.getBoundingClientRect().top;
   
@@ -1532,22 +1538,41 @@ chatbotButton.onmousedown = function(event) {
       
     }
   
-    function onMouseMove(event) {
+    function onMove(event) {
+        let pageX, pageY;
 
-      isDragging = true;
-      moveAt(event.pageX, event.pageY);
+        if (event.type === 'mousemove') {
+            pageX = event.pageX;
+            pageY = event.pageY;
+        } else if (event.type === 'touchmove') {
+            let touch = event.touches[0];
+            pageX = touch.pageX;
+            pageY = touch.pageY;
+        }
 
+        isDragging = true;
+        moveAt(pageX, pageY);
     }
   
-    document.addEventListener('mousemove', onMouseMove);
-  
-    chatbotButton.onmouseup = function() {
+    if (event.type === 'mousedown') {
+        document.addEventListener('mousemove', onMove);
+    } else if (event.type === 'touchstart') {
+        document.addEventListener('touchmove', onMove);
+    }
 
-        document.removeEventListener('mousemove', onMouseMove);
-        chatbotButton.onmouseup = null;
-        resetDrag(); 
-
-    };
+    if (event.type === 'mousedown') {
+        chatbotButton.onmouseup = function() {
+            document.removeEventListener('mousemove', onMove);
+            chatbotButton.onmouseup = null;
+            resetDrag();
+        };
+    } else if (event.type === 'touchstart') {
+        chatbotButton.ontouchend = function() {
+            document.removeEventListener('touchmove', onMove);
+            chatbotButton.ontouchend = null;
+            resetDrag();
+        };
+    }
   
     chatbotButton.ondragstart = function() {
 

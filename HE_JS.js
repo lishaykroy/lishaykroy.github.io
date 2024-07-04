@@ -458,7 +458,7 @@ swipers.forEach(swiper => {
 
     new Swiper(swiper, {
         slidesPerView: 3, 
-        spaceBetween: 20, 
+        spaceBetween: 10, 
         grabCursor: true,
         navigation: {
             nextEl: swiper.querySelector(".swiper-button-next"),
@@ -1304,14 +1304,12 @@ function playMusic() {
 var audioPlayer = document.getElementById('audioPlayer');
 var playIcon = document.getElementById('playIcon');
 var tooltip = document.querySelector('.play .tooltip');
-var visualizer = document.querySelector('.visualizer');
 
 if (audioPlayer.paused) {
 audioPlayer.play();
 playIcon.classList.remove('fa-play');
 playIcon.classList.add('fa-pause');
 tooltip.textContent = 'Pause Music';
-visualizer.classList.add('playing');
 toggleControlIcons(true);
 toggleTimeDisplay(true);
 } else {
@@ -1319,7 +1317,6 @@ audioPlayer.pause();
 playIcon.classList.remove('fa-pause');
 playIcon.classList.add('fa-play');
 tooltip.textContent = 'Play Music';
-visualizer.classList.remove('playing');
 toggleControlIcons(false);
 toggleTimeDisplay(false);
 }
@@ -1343,7 +1340,6 @@ function stopMusic() {
 var audioPlayer = document.getElementById('audioPlayer');
 var playIcon = document.getElementById('playIcon');
 var tooltip = document.querySelector('.play .tooltip');
-var visualizer = document.querySelector('.visualizer');
 
 audioPlayer.pause();      
 audioPlayer.currentTime = 0; 
@@ -1351,7 +1347,6 @@ audioPlayer.currentTime = 0;
 if (playIcon.classList.contains('fa-pause')) {
 
     playIcon.classList.remove('fa-pause');
-    visualizer.classList.remove('playing');
     playIcon.classList.add('fa-play');
     tooltip.textContent = 'Play Music';
     toggleControlIcons(false);

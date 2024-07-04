@@ -642,34 +642,6 @@ span {
         transition: width 0.1s ease;
     }
 
-    .visualizer {
-        position: absolute;
-        top: -45%;
-        right: -2.5%;
-        width: 80px;
-        height: 80px;
-        background-color: var(--main-color);
-        border-radius: 50%;
-        animation: pulse 1.5s ease infinite;
-        display: none; 
-        z-index: -1;
-    }
-    
-    @keyframes pulse {
-        0% {
-            transform: scale(0);
-            opacity: 1;
-        }
-        100% {
-            transform: scale(1);
-            opacity: 0;
-        }
-    }
-    
-    .visualizer.playing {
-        display: block; 
-    }
-
 /* Button One */
 
 .btn {
@@ -2115,7 +2087,7 @@ display:block;
     .actions {
         position: absolute;
         top: -7%;
-        left: 24%;
+        left: 30%;
         width: 20%;
         padding: 1rem 3%;
         background: var(--bg-color);
@@ -2140,33 +2112,25 @@ display:block;
     #message3 {
         visibility: hidden;
     }
-
+    
     .filter-buttons-container {
         position: relative;
-        text-align: center;
         display: flex;
-        flex-direction: column;
         align-items: center;
         margin-bottom: 5px; 
-        margin-left: 45px;
+        overflow-x: auto;
     }
 
     .filter-buttons {
-        display: flex;
-        top: 51%;
         flex-direction: row;
-        flex-wrap: nowrap;
-        justify-content: center; 
-        overflow-x: auto;
-        width: 100%;
         padding-bottom: 10px;
-        box-sizing: border-box;
+        margin-right: 250px;
     }
-
+    
     .filter-buttons button {
         margin-right: 15px;
         padding: 5px 10px;
-        min-width: 90px;
+        min-width: 105px;
         white-space: nowrap;
     }
 
@@ -2174,6 +2138,7 @@ display:block;
         margin-bottom: 5px;        
         width: auto;
         text-align: center;
+        margin-left: 45px;
     }
 
     .logo {
