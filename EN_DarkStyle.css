@@ -1152,30 +1152,40 @@ display:block;
 }
 
 .filter-buttons-container {
-    position: absolute;
-    flex-direction: column;
-    left: 15px;
-    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+.filter-buttons-wrapper {
+    overflow-x: auto; 
+    white-space: nowrap; 
+    width: 100%; 
 }
 
 .filter-buttons {
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-}    
-
-.filter-buttons-container h2 {
-    margin-bottom: 2rem;
+    display: inline-flex; 
+    flex-direction: row;
+    flex-wrap: nowrap;
+    white-space: nowrap; 
+    padding-bottom: 10px; 
+    box-sizing: border-box;
 }
 
 .filter-buttons button {
-    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px; 
     color: var(--text-color);
     background: var(--bg-color);
-    padding: 3px;
+    padding: 5px 10px;
     border: 1px solid var(--main-color);
     border-radius: 20px;
     font-weight: 500;
+    min-width: 90px;
+    text-align: center;
+    white-space: nowrap;
+    box-sizing: border-box; 
 }
 
 .filter-buttons button:hover {
@@ -2081,47 +2091,6 @@ display:block;
     #message3 {
         visibility: hidden;
     }
-    
-    .filter-buttons-container {
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px; 
-        justify-content: center;
-        width: 100%;
-    }
-
-    .filter-buttons-wrapper {
-        overflow-x: auto;
-        white-space: nowrap;
-        width: 100%;
-        justify-content: center;
-        display: flex;
-    }
-
-    .filter-buttons {
-        flex-direction: row;
-        display: inline-flex;
-        flex-wrap: nowrap;
-        padding-bottom: 10px;
-        justify-content: center;
-        box-sizing: border-box;
-    }
-    
-    .filter-buttons button {
-        margin-right: 10px;
-        padding: 5px 5px;
-        min-width: 105px;
-        white-space: nowrap;
-    }
-
-    .filter-buttons-container h2 {
-        margin-bottom: 5px;        
-        width: auto;
-        text-align: center;
-        margin-right: 15px;
-        flex-shrink: 0;
-    }
 }
 
 @media (max-width: 991px) {
@@ -2344,6 +2313,7 @@ display:block;
 
     .footer-text {
         margin-left: 8rem;
+        font-size: 1rem;
     }
 
     .footer-icon {
