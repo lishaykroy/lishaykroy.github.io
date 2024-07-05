@@ -2114,25 +2114,37 @@ span {
     #message3 {
         visibility: hidden;
     }
-
-        
+    
     .filter-buttons-container {
         position: relative;
         display: flex;
         align-items: center;
         margin-bottom: 5px; 
+        justify-content: center;
+        width: 100%;
+    }
+
+    .filter-buttons-wrapper {
         overflow-x: auto;
+        white-space: nowrap;
+        width: 100%;
+        justify-content: center;
+        display: flex;
     }
 
     .filter-buttons {
         flex-direction: row;
+        display: inline-flex;
+        flex-wrap: nowrap;
         padding-bottom: 10px;
-        margin-right: 250px;
+        justify-content: center;
+        box-sizing: border-box;
+        margin-left: 120px;
     }
     
     .filter-buttons button {
-        margin-right: 15px;
-        padding: 5px 10px;
+        margin-right: 10px;
+        padding: 5px 5px;
         min-width: 105px;
         white-space: nowrap;
     }
@@ -2142,6 +2154,7 @@ span {
         width: auto;
         text-align: center;
         margin-left: 45px;
+        flex-shrink: 0;
     }
 
     .logo {
@@ -2363,6 +2376,26 @@ span {
     .award {
         width: 100%;
         max-width: 400px;
+    }
+        
+    .footer-text {
+        margin-right: 8rem;
+    }
+
+    .footer-icon {
+        margin-left: 8rem;
+    }
+    
+    .end-icon:hover .tooltip , .language-switcher:hover .tooltip , .mode-switcher:hover .tooltip , .footer-icon:hover .tooltip ,
+    .up-icon:hover .tooltip , .down-icon:hover .tooltip , .contact .up-icon:hover .tooltip , .social-media div:hover .tooltip , 
+    .play:hover .tooltip, .stop:hover .tooltip, .backward:hover .tooltip, .forward:hover .tooltip, .mute:hover .tooltip ,
+    .home .down-icon:hover .tooltip {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #infoBtn:hover .tooltip {
+        display: none;
     }
 }
 
